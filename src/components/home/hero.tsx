@@ -23,7 +23,9 @@ export function Hero({ site }: { site: SiteConfig }) {
   return (
     // min-h matches the viewport minus the sticky header (h-16) so the hero fills
     // the screen exactly on load, with no sliver of the next section peeking in.
-    <section className="bg-grid relative flex min-h-[calc(100svh-4rem)] flex-col justify-center overflow-hidden">
+    // Content hugs the top on mobile instead of centering, so the CTAs land higher
+    // up and stay within the fold; sm+ has enough room to center it nicely.
+    <section className="bg-grid relative flex min-h-[calc(100svh-4rem)] flex-col justify-start overflow-hidden sm:justify-center">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -35,7 +37,7 @@ export function Hero({ site }: { site: SiteConfig }) {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 text-center sm:gap-7 sm:py-16"
+        className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 pb-10 pt-8 text-center sm:gap-10 sm:py-16"
       >
         <motion.div variants={item}>
           <Image
@@ -44,7 +46,7 @@ export function Hero({ site }: { site: SiteConfig }) {
             width={144}
             height={144}
             priority
-            className="h-16 w-16 rounded-full border border-[var(--card-border)] object-cover sm:h-28 sm:w-28 lg:h-36 lg:w-36"
+            className="h-32 w-32 rounded-full border border-[var(--card-border)] object-cover sm:h-36 sm:w-36"
           />
         </motion.div>
 
@@ -54,25 +56,25 @@ export function Hero({ site }: { site: SiteConfig }) {
         </motion.div>
 
         {/* Static, not animated: LCP candidates shouldn't sit at opacity:0 while staggered siblings wait their turn. */}
-        <h1 className="max-w-3xl text-2xl font-semibold tracking-tight sm:text-4xl lg:text-6xl">
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
           {site.name}
           <span className="block text-gradient">{site.title}</span>
         </h1>
 
-        <p className="max-w-2xl text-balance text-sm leading-relaxed text-[var(--muted-foreground)] sm:text-lg">
+        <p className="max-w-2xl text-balance text-lg leading-relaxed text-[var(--muted-foreground)]">
           {site.tagline}
         </p>
 
-        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <Button href="/projects" size="lg" className="h-9 px-4 text-sm sm:h-12 sm:px-8 sm:text-base">
+        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-3">
+          <Button href="/projects" size="lg">
             {t("ctaProjects")}
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button href={site.cvUrl} variant="outline" size="lg" external className="h-9 px-4 text-sm sm:h-12 sm:px-8 sm:text-base">
+          <Button href={site.cvUrl} variant="outline" size="lg" external>
             <Download className="h-4 w-4" />
             {t("ctaCv")}
           </Button>
-          <Button href="/#contact" variant="ghost" size="lg" className="h-9 px-4 text-sm sm:h-12 sm:px-8 sm:text-base">
+          <Button href="/#contact" variant="ghost" size="lg">
             <Mail className="h-4 w-4" />
             {t("ctaContact")}
           </Button>

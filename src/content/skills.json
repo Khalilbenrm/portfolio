@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "note": "Niveaux (0-100) à ajuster librement — estimés à partir de la profondeur d'usage observée dans project-flow (Java/Spring/Microservices/Docker/REST) et smart-building-iot-java (IoT/MQTT/Kafka), complétés par des niveaux par défaut raisonnables pour les compétences non démontrées dans ces deux dépôts (JavaFX, Python, Node.js, Cloud...)."
+  },
+  "skills": [
+    { "name": "Java", "category": "Backend", "level": 90, "levelLabel": "expert" },
+    { "name": "Spring / Spring Boot", "category": "Backend", "level": 88, "levelLabel": "expert" },
+    { "name": "Microservices", "category": "Backend", "level": 82, "levelLabel": "advanced" },
+    { "name": "REST API", "category": "Backend", "level": 88, "levelLabel": "expert" },
+    { "name": "Node.js", "category": "Backend", "level": 65, "levelLabel": "proficient" },
+    { "name": "Python", "category": "Backend", "level": 60, "levelLabel": "proficient" },
+    { "name": "SQL", "category": "Backend", "level": 75, "levelLabel": "advanced" },
+    { "name": "JavaFX", "category": "Backend", "level": 55, "levelLabel": "proficient" },
+    { "name": "React", "category": "Frontend", "level": 78, "levelLabel": "advanced" },
+    { "name": "Next.js", "category": "Frontend", "level": 76, "levelLabel": "advanced" },
+    { "name": "TypeScript", "category": "Frontend", "level": 78, "levelLabel": "advanced" },
+    { "name": "Tailwind CSS", "category": "Frontend", "level": 80, "levelLabel": "advanced" },
+    { "name": "Docker", "category": "DevOps & Cloud", "level": 80, "levelLabel": "advanced" },
+    { "name": "CI/CD", "category": "DevOps & Cloud", "level": 65, "levelLabel": "proficient" },
+    { "name": "Cloud", "category": "DevOps & Cloud", "level": 60, "levelLabel": "proficient" },
+    { "name": "Linux", "category": "DevOps & Cloud", "level": 75, "levelLabel": "advanced" },
+    { "name": "Git & GitHub", "category": "DevOps & Cloud", "level": 85, "levelLabel": "advanced" },
+    { "name": "IoT (MQTT / Kafka)", "category": "Data & IoT", "level": 70, "levelLabel": "proficient" }
+  ]
+}

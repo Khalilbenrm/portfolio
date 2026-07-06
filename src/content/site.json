@@ -1,0 +1,24 @@
+{
+  "name": "Khalil Ben Romdhane",
+  "title": "Software Engineer",
+  "tagline": "Je conçois des systèmes backend distribués et des interfaces soignées — de l'architecture microservices à l'expérience utilisateur finale.",
+  "shortTagline": "Software Engineer — Backend, Systèmes distribués & IoT",
+  "location": "Tunisie",
+  "email": "benrm.khalil@gmail.com",
+  "github": "https://github.com/Khalilbenrm",
+  "githubUsername": "Khalilbenrm",
+  "linkedin": "#",
+  "cvUrl": "/cv-placeholder.pdf",
+  "domain": "https://your-domain.com",
+  "nav": [
+    { "label": "Accueil", "href": "/" },
+    { "label": "À propos", "href": "/#about" },
+    { "label": "Compétences", "href": "/#skills" },
+    { "label": "Projets", "href": "/projects" },
+    { "label": "GitHub", "href": "/#github" },
+    { "label": "Contact", "href": "/#contact" }
+  ],
+  "_meta": {
+    "note": "Fichier de configuration central. linkedin='#' et domain sont des placeholders à remplacer avant mise en production : ajoute ton URL LinkedIn réelle, ton nom de domaine Vercel, et remplace public/cv-placeholder.pdf par ton vrai CV (en gardant le même nom de fichier ou en mettant à jour cvUrl)."
+  }
+}

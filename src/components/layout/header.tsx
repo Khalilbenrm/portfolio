@@ -1,14 +1,27 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { ThemeToggle } from "./theme-toggle";
+import { LanguageSwitcher } from "./language-switcher";
 import type { SiteConfig } from "@/types/site";
+
+const NAV_ITEMS = [
+  { key: "home", href: "/" },
+  { key: "about", href: "/#about" },
+  { key: "skills", href: "/#skills" },
+  { key: "projects", href: "/projects" },
+  { key: "github", href: "/#github" },
+  { key: "contact", href: "/#contact" },
+] as const;
 
 export function Header({ site }: { site: SiteConfig }) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("Nav");
+  const tHeader = useTranslations("Header");
 
   return (
     <header className="glass sticky top-0 z-50 w-full border-b">
@@ -18,24 +31,25 @@ export function Header({ site }: { site: SiteConfig }) {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {site.nav.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Link
-              key={item.href}
+              key={item.key}
               href={item.href}
               className="text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-2 md:flex">
+            <LanguageSwitcher />
             <ThemeToggle />
           </div>
           <button
             type="button"
-            aria-label="Ouvrir le menu"
+            aria-label={open ? tHeader("closeMenu") : tHeader("openMenu")}
             onClick={() => setOpen((o) => !o)}
             className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--foreground)] md:hidden"
           >
@@ -54,17 +68,18 @@ export function Header({ site }: { site: SiteConfig }) {
             className="overflow-hidden border-t border-[var(--border)] md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
-              {site.nav.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <Link
-                  key={item.href}
+                  key={item.key}
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm text-[var(--muted-foreground)] hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               ))}
-              <div className="mt-2 px-3">
+              <div className="mt-2 flex items-center gap-2 px-3">
+                <LanguageSwitcher />
                 <ThemeToggle />
               </div>
             </div>

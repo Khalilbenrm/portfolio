@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/common/reveal";
 import { DynamicIcon } from "@/components/common/icon";
 import { CaseStudySection } from "./section";
 import type { ProjectFeature } from "@/types/project";
 
 export function Features({ features }: { features: ProjectFeature[] }) {
+  const t = useTranslations("CaseStudy.features");
+
   return (
-    <CaseStudySection eyebrow="Fonctionnalités" title="Ce que le système fait concrètement">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, i) => (
           <Reveal key={feature.title} delay={i * 0.05}>

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,7 @@ import { Reveal } from "@/components/common/reveal";
 import type { Project } from "@/types/project";
 
 export function CaseStudyHero({ project }: { project: Project }) {
+  const t = useTranslations("CaseStudy.hero");
   const allTech = project.techStack.flatMap((c) => c.items);
 
   return (
@@ -14,7 +16,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
       <Reveal>
         <Button href="/projects" variant="ghost" size="sm" className="mb-8 -ml-4">
           <ArrowLeft className="h-4 w-4" />
-          Tous les projets
+          {t("backToProjects")}
         </Button>
       </Reveal>
 
@@ -44,12 +46,12 @@ export function CaseStudyHero({ project }: { project: Project }) {
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={project.github} external>
             <FaGithub className="h-4 w-4" />
-            Code source
+            {t("codeSource")}
           </Button>
           {project.demo && (
             <Button href={project.demo} variant="outline" external>
               <ExternalLink className="h-4 w-4" />
-              Démo
+              {t("demo")}
             </Button>
           )}
         </div>

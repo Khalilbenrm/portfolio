@@ -1,15 +1,14 @@
+import { useTranslations } from "next-intl";
 import { Info } from "lucide-react";
 import { Reveal } from "@/components/common/reveal";
 import { CaseStudySection } from "./section";
 
 export function Caveats({ items }: { items: string[] }) {
+  const t = useTranslations("CaseStudy.caveats");
   if (!items?.length) return null;
+
   return (
-    <CaseStudySection
-      eyebrow="Limites connues"
-      title="État actuel & pistes d'amélioration"
-      description="Une revue de code honnête inclut ce qui n'est pas encore fait — voici les points identifiés directement dans le dépôt."
-    >
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")} description={t("description")}>
       <Reveal>
         <div className="flex flex-col gap-4 rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card)] p-6">
           {items.map((item) => (

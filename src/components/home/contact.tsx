@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Mail, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SectionHeading } from "@/components/common/section-heading";
@@ -7,20 +8,18 @@ import { ContactForm } from "./contact-form";
 import type { SiteConfig } from "@/types/site";
 
 export function Contact({ site }: { site: SiteConfig }) {
+  const t = useTranslations("Contact");
+
   const links: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { label: "GitHub", href: site.github, icon: FaGithub },
-    { label: "LinkedIn", href: site.linkedin, icon: FaLinkedin },
-    { label: "Email", href: `mailto:${site.email}`, icon: Mail },
-    { label: "CV", href: site.cvUrl, icon: Download },
+    { label: t("linkGithub"), href: site.github, icon: FaGithub },
+    { label: t("linkLinkedin"), href: site.linkedin, icon: FaLinkedin },
+    { label: t("linkEmail"), href: `mailto:${site.email}`, icon: Mail },
+    { label: t("linkCv"), href: site.cvUrl, icon: Download },
   ];
 
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Discutons de votre prochain projet"
-        description="Que ce soit pour une opportunité, une collaboration ou simplement échanger — n'hésitez pas."
-      />
+      <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
       <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
         <Reveal className="flex flex-col gap-3">
           {links.map(({ label, href, icon: Icon }) => {
@@ -40,7 +39,7 @@ export function Contact({ site }: { site: SiteConfig }) {
                 </span>
                 {isPlaceholder && (
                   <span className="rounded-full bg-[var(--surface)] px-2.5 py-1 text-xs text-[var(--muted-foreground)]">
-                    Bientôt disponible
+                    {t("comingSoon")}
                   </span>
                 )}
               </a>

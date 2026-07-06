@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/common/reveal";
 import { Badge } from "@/components/ui/badge";
 import { CaseStudySection } from "./section";
 import type { TechStackCategory } from "@/types/project";
 
 export function TechStack({ stack }: { stack: TechStackCategory[] }) {
+  const t = useTranslations("CaseStudy.techStack");
+
   return (
-    <CaseStudySection eyebrow="Stack technique" title="Technologies utilisées">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {stack.map((category, i) => (
           <Reveal key={category.category} delay={i * 0.05}>

@@ -1,0 +1,173 @@
+{
+  "Skip": {
+    "toContent": "Skip to main content"
+  },
+  "Header": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "language": "Switch language"
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "rights": "All rights reserved."
+  },
+  "Hero": {
+    "availableBadge": "Available for new opportunities",
+    "ctaProjects": "View my projects",
+    "ctaCv": "Download my resume",
+    "ctaContact": "Get in touch",
+    "profilePhoto": "Profile photo"
+  },
+  "About": {
+    "eyebrow": "About",
+    "illustration": "Photo / illustration"
+  },
+  "Skills": {
+    "eyebrow": "Skills",
+    "title": "A complete toolkit, from backend to finished product",
+    "description": "Technologies and practices used regularly, with an indicative proficiency level.",
+    "levels": {
+      "learning": "Learning",
+      "proficient": "Proficient",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    },
+    "progressLabel": "Proficiency level {name}: {level}"
+  },
+  "FeaturedProjects": {
+    "eyebrow": "Projects",
+    "title": "Technical case studies",
+    "description": "Two backend systems analyzed in depth: architecture, patterns, and real trade-offs.",
+    "viewAll": "All projects"
+  },
+  "GithubStats": {
+    "eyebrow": "GitHub",
+    "title": "Open-source activity",
+    "description": "Data fetched live from the public GitHub API.",
+    "viewProfile": "View profile",
+    "error": "Couldn't load GitHub stats right now (API unavailable or rate limit reached). Try again later, or check out",
+    "errorLinkText": "the GitHub profile",
+    "topLanguages": "Most used languages",
+    "popularRepos": "Popular repositories",
+    "statRepos": "Repos",
+    "statStars": "Stars",
+    "statFollowers": "Followers",
+    "noDescription": "No description."
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your next project",
+    "description": "Whether it's an opportunity, a collaboration, or just a chat — feel free to reach out.",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "linkEmail": "Email",
+    "linkCv": "Resume",
+    "comingSoon": "Coming soon"
+  },
+  "ContactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your project or request...",
+    "submit": "Send message",
+    "hint": "Opens your email client with the message pre-filled.",
+    "defaultName": "New message",
+    "subjectPrefix": "Portfolio contact"
+  },
+  "ProjectsPage": {
+    "eyebrow": "Portfolio",
+    "title": "Projects",
+    "description": "Each project below is a complete case study: architecture, tech stack, diagrams, and challenges faced — all derived directly from the source code.",
+    "upcomingEyebrow": "Coming up",
+    "upcomingTitle": "Projects in progress"
+  },
+  "ProjectCard": {
+    "caseStudy": "Case study",
+    "codeSource": "Source code"
+  },
+  "InProgressCard": {
+    "inDevelopment": "In development",
+    "comingSoon": "Coming soon"
+  },
+  "CaseStudy": {
+    "hero": {
+      "backToProjects": "All projects",
+      "codeSource": "Source code",
+      "demo": "Demo"
+    },
+    "about": {
+      "eyebrow": "About",
+      "title": "Context, problem & solution"
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "What the system actually does"
+    },
+    "techStack": {
+      "eyebrow": "Tech stack",
+      "title": "Technologies used"
+    },
+    "architecture": {
+      "eyebrow": "Software architecture",
+      "title": "How the system is built",
+      "layersTitle": "Application layers",
+      "patternsTitle": "Design patterns",
+      "solidTitle": "SOLID principles"
+    },
+    "structure": {
+      "eyebrow": "Project structure",
+      "title": "Code organization",
+      "folderRolesTitle": "Role of key folders"
+    },
+    "workflow": {
+      "eyebrow": "Workflow",
+      "title": "Request lifecycle"
+    },
+    "challenges": {
+      "eyebrow": "Technical challenges",
+      "title": "Problems encountered & solutions applied"
+    },
+    "optimizations": {
+      "eyebrow": "Optimizations",
+      "title": "Engineering decisions",
+      "performance": "Performance",
+      "security": "Security",
+      "maintainability": "Maintainability",
+      "scalability": "Scalability",
+      "quality": "Code quality"
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "title": "Visual preview",
+      "description": "Screenshots coming soon — the placeholders below are ready to receive the real visuals."
+    },
+    "learnings": {
+      "eyebrow": "What I learned",
+      "title": "Skills gained"
+    },
+    "caveats": {
+      "eyebrow": "Known limitations",
+      "title": "Current state & areas for improvement",
+      "description": "An honest code review includes what isn't done yet — here are the points identified directly in the repository."
+    },
+    "cta": {
+      "title": "Want to know more about {name}?",
+      "description": "The complete source code is available on GitHub, along with the history and deployment configuration.",
+      "exploreCode": "Explore the code",
+      "otherProjects": "Other projects"
+    }
+  },
+  "Mermaid": {
+    "renderError": "The diagram could not be rendered."
+  }
+}

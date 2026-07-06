@@ -1,10 +1,13 @@
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/common/reveal";
 import { CaseStudySection } from "./section";
 import type { WorkflowStep } from "@/types/project";
 
 export function Workflow({ steps }: { steps: WorkflowStep[] }) {
+  const t = useTranslations("CaseStudy.workflow");
+
   return (
-    <CaseStudySection eyebrow="Workflow" title="Parcours d'une requête">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <div className="relative flex flex-col gap-8 pl-8">
         <div className="absolute left-[11px] top-2 bottom-2 w-px bg-[var(--border)]" aria-hidden />
         {steps.map((step, i) => (

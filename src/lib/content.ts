@@ -3,29 +3,36 @@ import path from "node:path";
 import matter from "gray-matter";
 import siteJson from "@/content/site.json";
 import skillsJson from "@/content/skills.json";
-import inProgressJson from "@/content/projects-in-progress.json";
-import type { SiteConfig, Skill } from "@/types/site";
+import type { Locale } from "@/i18n/routing";
+import type { RawSiteConfig, SiteConfig, Skill } from "@/types/site";
 import type { InProgressProject, Project, ProjectFrontmatter } from "@/types/project";
 
-const PROJECTS_DIR = path.join(process.cwd(), "src/content/projects");
-const ABOUT_PATH = path.join(process.cwd(), "src/content/about.md");
+const CONTENT_DIR = path.join(process.cwd(), "src/content");
+const PROJECTS_DIR = path.join(CONTENT_DIR, "projects");
 
-export function getSiteConfig(): SiteConfig {
-  const { _meta, ...config } = siteJson as SiteConfig & { _meta?: unknown };
-  void _meta;
-  return config;
+export function getSiteConfig(locale: Locale): SiteConfig {
+  const raw = siteJson as RawSiteConfig & { _meta?: unknown };
+  const { tagline, shortTagline, ...rest } = raw;
+  return {
+    ...rest,
+    tagline: tagline[locale],
+    shortTagline: shortTagline[locale],
+  };
 }
 
 export function getSkills(): Skill[] {
   return (skillsJson as { skills: Skill[] }).skills;
 }
 
-export function getInProgressProjects(): InProgressProject[] {
-  return (inProgressJson as { items: InProgressProject[] }).items;
+export function getInProgressProjects(locale: Locale): InProgressProject[] {
+  const filePath = path.join(CONTENT_DIR, `projects-in-progress.${locale}.json`);
+  const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as { items: InProgressProject[] };
+  return raw.items;
 }
 
-export function getAboutContent() {
-  const raw = fs.readFileSync(ABOUT_PATH, "utf8");
+export function getAboutContent(locale: Locale) {
+  const filePath = path.join(CONTENT_DIR, `about.${locale}.md`);
+  const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
   return {
     headline: data.headline as string,
@@ -35,8 +42,9 @@ export function getAboutContent() {
   };
 }
 
-export function getAllProjects(): Project[] {
-  const files = fs.readdirSync(PROJECTS_DIR).filter((f) => f.endsWith(".md"));
+export function getAllProjects(locale: Locale): Project[] {
+  const suffix = `.${locale}.md`;
+  const files = fs.readdirSync(PROJECTS_DIR).filter((f) => f.endsWith(suffix));
   const projects = files.map((file) => {
     const raw = fs.readFileSync(path.join(PROJECTS_DIR, file), "utf8");
     const { data, content } = matter(raw);
@@ -48,10 +56,10 @@ export function getAllProjects(): Project[] {
   return projects.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export function getProjectBySlug(slug: string): Project | undefined {
-  return getAllProjects().find((p) => p.slug === slug);
+export function getProjectBySlug(locale: Locale, slug: string): Project | undefined {
+  return getAllProjects(locale).find((p) => p.slug === slug);
 }
 
-export function getFeaturedProjects(): Project[] {
-  return getAllProjects().filter((p) => p.featured);
+export function getFeaturedProjects(locale: Locale): Project[] {
+  return getAllProjects(locale).filter((p) => p.featured);
 }

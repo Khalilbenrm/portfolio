@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import { AccordionItem } from "@/components/ui/accordion";
 import { Reveal } from "@/components/common/reveal";
 import { CaseStudySection } from "./section";
 import type { Challenge } from "@/types/project";
 
 export function Challenges({ challenges }: { challenges: Challenge[] }) {
+  const t = useTranslations("CaseStudy.challenges");
+
   return (
-    <CaseStudySection eyebrow="Défis techniques" title="Problèmes rencontrés & solutions apportées">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <Reveal>
         <div className="rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card)] px-6">
           {challenges.map((challenge, i) => (

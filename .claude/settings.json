@@ -3,7 +3,13 @@
     "allow": [
       "Bash(timeout 25 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
       "Bash(curl -s http://localhost:3000/ -o /tmp/verify2.html)",
-      "Bash(curl -s http://localhost:3000/projects/project-flow -o /tmp/pf-check.html -w \"HTTP %{http_code}\\\\n\")"
+      "Bash(curl -s http://localhost:3000/projects/project-flow -o /tmp/pf-check.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(mv favicon.ico \"[locale]/favicon.ico\")",
+      "Bash(mv globals.css \"[locale]/globals.css\")",
+      "Bash(mv about.md about.fr.md)",
+      "Bash(mv projects-in-progress.json projects-in-progress.fr.json)",
+      "Bash(mv projects/project-flow.md projects/project-flow.fr.md)",
+      "Bash(mv projects/smart-building-iot.md projects/smart-building-iot.fr.md)"
     ]
   }
 }

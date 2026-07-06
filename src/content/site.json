@@ -1,8 +1,14 @@
 {
   "name": "Khalil Ben Romdhane",
   "title": "Software Engineer",
-  "tagline": "Je conçois des systèmes backend distribués et des interfaces soignées — de l'architecture microservices à l'expérience utilisateur finale.",
-  "shortTagline": "Software Engineer — Backend, Systèmes distribués & IoT",
+  "tagline": {
+    "fr": "Je conçois des systèmes backend distribués et des interfaces soignées — de l'architecture microservices à l'expérience utilisateur finale.",
+    "en": "I design distributed backend systems and polished interfaces — from microservices architecture to the final user experience."
+  },
+  "shortTagline": {
+    "fr": "Software Engineer — Backend, Systèmes distribués & IoT",
+    "en": "Software Engineer — Backend, Distributed Systems & IoT"
+  },
   "location": "Tunisie",
   "email": "benrm.khalil@gmail.com",
   "github": "https://github.com/Khalilbenrm",
@@ -10,15 +16,7 @@
   "linkedin": "#",
   "cvUrl": "/cv-placeholder.pdf",
   "domain": "https://your-domain.com",
-  "nav": [
-    { "label": "Accueil", "href": "/" },
-    { "label": "À propos", "href": "/#about" },
-    { "label": "Compétences", "href": "/#skills" },
-    { "label": "Projets", "href": "/projects" },
-    { "label": "GitHub", "href": "/#github" },
-    { "label": "Contact", "href": "/#contact" }
-  ],
   "_meta": {
-    "note": "Fichier de configuration central. linkedin='#' et domain sont des placeholders à remplacer avant mise en production : ajoute ton URL LinkedIn réelle, ton nom de domaine Vercel, et remplace public/cv-placeholder.pdf par ton vrai CV (en gardant le même nom de fichier ou en mettant à jour cvUrl)."
+    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. tagline/shortTagline ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
   }
 }

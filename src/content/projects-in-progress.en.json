@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "note": "Add new objects to 'items' to make a project appear in the 'Projects in Progress' section — mirror any change made in the .fr.json file so both languages stay in sync. status: 'coming-soon' | 'in-development'. progress: 0-100."
+  },
+  "items": [
+    {
+      "slug": "next-project",
+      "name": "Next project",
+      "description": "A new project is being prepared — details will be published once the initial architecture is stabilized.",
+      "tech": ["To be defined"],
+      "progress": 10,
+      "status": "coming-soon"
+    }
+  ]
+}

@@ -1,10 +1,13 @@
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/common/reveal";
 import { CaseStudySection } from "./section";
 import type { Project } from "@/types/project";
 
 export function Structure({ structure }: { structure: Project["structure"] }) {
+  const t = useTranslations("CaseStudy.structure");
+
   return (
-    <CaseStudySection eyebrow="Structure du projet" title="Organisation du code">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
         <Reveal>
           <pre className="overflow-x-auto rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--surface)] p-6 font-mono text-xs leading-relaxed text-[var(--muted-foreground)]">
@@ -13,7 +16,7 @@ export function Structure({ structure }: { structure: Project["structure"] }) {
         </Reveal>
         <Reveal delay={0.1}>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            Rôle des dossiers clés
+            {t("folderRolesTitle")}
           </h3>
           <div className="flex flex-col gap-4">
             {structure.notes.map((note) => (

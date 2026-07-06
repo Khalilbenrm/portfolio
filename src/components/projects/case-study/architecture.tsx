@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/common/reveal";
 import { MermaidDiagram } from "@/components/common/mermaid-diagram";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,16 +6,14 @@ import { CaseStudySection } from "./section";
 import type { Project } from "@/types/project";
 
 export function Architecture({ architecture }: { architecture: Project["architecture"] }) {
+  const t = useTranslations("CaseStudy.architecture");
+
   return (
-    <CaseStudySection
-      eyebrow="Architecture logicielle"
-      title="Comment le système est construit"
-      description={architecture.overview}
-    >
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")} description={architecture.overview}>
       <div className="grid gap-8 lg:grid-cols-3">
         <Reveal>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            Couches applicatives
+            {t("layersTitle")}
           </h3>
           <div className="flex flex-col gap-3">
             {architecture.layers.map((layer) => (
@@ -28,7 +27,7 @@ export function Architecture({ architecture }: { architecture: Project["architec
 
         <Reveal delay={0.05}>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            Design patterns
+            {t("patternsTitle")}
           </h3>
           <div className="flex flex-col gap-3">
             {architecture.patterns.map((pattern) => (
@@ -42,7 +41,7 @@ export function Architecture({ architecture }: { architecture: Project["architec
 
         <Reveal delay={0.1}>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            Principes SOLID
+            {t("solidTitle")}
           </h3>
           <div className="flex flex-col gap-3">
             {architecture.solid.map((s) => (

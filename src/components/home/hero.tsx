@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Placeholder } from "@/components/common/placeholder";
@@ -17,6 +18,8 @@ const item = {
 };
 
 export function Hero({ site }: { site: SiteConfig }) {
+  const t = useTranslations("Hero");
+
   return (
     <section className="bg-grid relative overflow-hidden">
       <div
@@ -34,7 +37,7 @@ export function Hero({ site }: { site: SiteConfig }) {
       >
         <motion.div variants={item}>
           <Placeholder
-            label="Photo de profil"
+            label={t("profilePhoto")}
             icon="UserRound"
             aspect="aspect-square"
             className="h-32 w-32 rounded-full sm:h-36 sm:w-36"
@@ -43,7 +46,7 @@ export function Hero({ site }: { site: SiteConfig }) {
 
         <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--surface)] px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)]">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Disponible pour de nouvelles opportunités
+          {t("availableBadge")}
         </motion.div>
 
         {/* Static, not animated: LCP candidates shouldn't sit at opacity:0 while staggered siblings wait their turn. */}
@@ -58,16 +61,16 @@ export function Hero({ site }: { site: SiteConfig }) {
 
         <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-3">
           <Button href="/projects" size="lg">
-            Voir mes projets
+            {t("ctaProjects")}
             <ArrowRight className="h-4 w-4" />
           </Button>
           <Button href={site.cvUrl} variant="outline" size="lg" external>
             <Download className="h-4 w-4" />
-            Télécharger mon CV
+            {t("ctaCv")}
           </Button>
           <Button href="/#contact" variant="ghost" size="lg">
             <Mail className="h-4 w-4" />
-            Me contacter
+            {t("ctaContact")}
           </Button>
         </motion.div>
       </motion.div>

@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 export function MermaidDiagram({ diagram, title }: { diagram: string; title?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -10,6 +11,7 @@ export function MermaidDiagram({ diagram, title }: { diagram: string; title?: st
   const rawId = useId().replace(/[^a-zA-Z0-9]/g, "");
   const id = `mermaid-${rawId}`;
   const { resolvedTheme } = useTheme();
+  const t = useTranslations("Mermaid");
   const [svg, setSvg] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
@@ -65,9 +67,7 @@ export function MermaidDiagram({ diagram, title }: { diagram: string; title?: st
     >
       {title && <p className="mb-4 text-sm font-medium text-[var(--muted-foreground)]">{title}</p>}
       {error ? (
-        <p className="text-sm text-[var(--muted-foreground)]">
-          Le diagramme n&apos;a pas pu être rendu.
-        </p>
+        <p className="text-sm text-[var(--muted-foreground)]">{t("renderError")}</p>
       ) : svg ? (
         <div className="[&_svg]:mx-auto [&_svg]:max-w-full" dangerouslySetInnerHTML={{ __html: svg }} />
       ) : (

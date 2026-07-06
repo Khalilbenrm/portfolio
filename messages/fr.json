@@ -1,0 +1,173 @@
+{
+  "Skip": {
+    "toContent": "Aller au contenu principal"
+  },
+  "Header": {
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "toggleTheme": "Basculer le thème",
+    "language": "Changer de langue"
+  },
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "rights": "Tous droits réservés."
+  },
+  "Hero": {
+    "availableBadge": "Disponible pour de nouvelles opportunités",
+    "ctaProjects": "Voir mes projets",
+    "ctaCv": "Télécharger mon CV",
+    "ctaContact": "Me contacter",
+    "profilePhoto": "Photo de profil"
+  },
+  "About": {
+    "eyebrow": "À propos",
+    "illustration": "Photo / illustration"
+  },
+  "Skills": {
+    "eyebrow": "Compétences",
+    "title": "Une boîte à outils complète, du backend au produit fini",
+    "description": "Technologies et pratiques utilisées régulièrement, avec un niveau de maîtrise indicatif.",
+    "levels": {
+      "learning": "Apprentissage",
+      "proficient": "Opérationnel",
+      "advanced": "Avancé",
+      "expert": "Expert"
+    },
+    "progressLabel": "Niveau de maîtrise {name} : {level}"
+  },
+  "FeaturedProjects": {
+    "eyebrow": "Projets",
+    "title": "Études de cas techniques",
+    "description": "Deux systèmes backend analysés en profondeur : architecture, patterns et arbitrages réels.",
+    "viewAll": "Tous les projets"
+  },
+  "GithubStats": {
+    "eyebrow": "GitHub",
+    "title": "Activité open-source",
+    "description": "Données récupérées en direct depuis l'API publique GitHub.",
+    "viewProfile": "Voir le profil",
+    "error": "Impossible de charger les statistiques GitHub pour le moment (API indisponible ou limite de requêtes atteinte). Réessaie plus tard, ou consulte directement",
+    "errorLinkText": "le profil GitHub",
+    "topLanguages": "Langages les plus utilisés",
+    "popularRepos": "Dépôts populaires",
+    "statRepos": "Dépôts",
+    "statStars": "Étoiles",
+    "statFollowers": "Abonnés",
+    "noDescription": "Pas de description."
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Discutons de votre prochain projet",
+    "description": "Que ce soit pour une opportunité, une collaboration ou simplement échanger — n'hésitez pas.",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "linkEmail": "Email",
+    "linkCv": "CV",
+    "comingSoon": "Bientôt disponible"
+  },
+  "ContactForm": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "vous@exemple.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Décrivez votre projet ou votre demande...",
+    "submit": "Envoyer le message",
+    "hint": "Ouvre votre client email avec le message pré-rempli.",
+    "defaultName": "Nouveau message",
+    "subjectPrefix": "Contact portfolio"
+  },
+  "ProjectsPage": {
+    "eyebrow": "Portfolio",
+    "title": "Projets",
+    "description": "Chaque projet ci-dessous est une étude de cas complète : architecture, stack technique, diagrammes et défis rencontrés — tout est déduit directement du code source.",
+    "upcomingEyebrow": "À venir",
+    "upcomingTitle": "Projets en cours"
+  },
+  "ProjectCard": {
+    "caseStudy": "Case study",
+    "codeSource": "Code source"
+  },
+  "InProgressCard": {
+    "inDevelopment": "En développement",
+    "comingSoon": "Bientôt disponible"
+  },
+  "CaseStudy": {
+    "hero": {
+      "backToProjects": "Tous les projets",
+      "codeSource": "Code source",
+      "demo": "Démo"
+    },
+    "about": {
+      "eyebrow": "À propos",
+      "title": "Contexte, problème & solution"
+    },
+    "features": {
+      "eyebrow": "Fonctionnalités",
+      "title": "Ce que le système fait concrètement"
+    },
+    "techStack": {
+      "eyebrow": "Stack technique",
+      "title": "Technologies utilisées"
+    },
+    "architecture": {
+      "eyebrow": "Architecture logicielle",
+      "title": "Comment le système est construit",
+      "layersTitle": "Couches applicatives",
+      "patternsTitle": "Design patterns",
+      "solidTitle": "Principes SOLID"
+    },
+    "structure": {
+      "eyebrow": "Structure du projet",
+      "title": "Organisation du code",
+      "folderRolesTitle": "Rôle des dossiers clés"
+    },
+    "workflow": {
+      "eyebrow": "Workflow",
+      "title": "Parcours d'une requête"
+    },
+    "challenges": {
+      "eyebrow": "Défis techniques",
+      "title": "Problèmes rencontrés & solutions apportées"
+    },
+    "optimizations": {
+      "eyebrow": "Optimisations",
+      "title": "Décisions d'ingénierie",
+      "performance": "Performance",
+      "security": "Sécurité",
+      "maintainability": "Maintenabilité",
+      "scalability": "Évolutivité",
+      "quality": "Qualité du code"
+    },
+    "gallery": {
+      "eyebrow": "Galerie",
+      "title": "Aperçu visuel",
+      "description": "Captures d'écran à venir — les emplacements ci-dessous sont prêts à recevoir les visuels réels."
+    },
+    "learnings": {
+      "eyebrow": "Ce que j'ai appris",
+      "title": "Compétences acquises"
+    },
+    "caveats": {
+      "eyebrow": "Limites connues",
+      "title": "État actuel & pistes d'amélioration",
+      "description": "Une revue de code honnête inclut ce qui n'est pas encore fait — voici les points identifiés directement dans le dépôt."
+    },
+    "cta": {
+      "title": "Envie d'en savoir plus sur {name} ?",
+      "description": "Le code source complet est disponible sur GitHub, avec l'historique et la configuration de déploiement.",
+      "exploreCode": "Explorer le code",
+      "otherProjects": "Autres projets"
+    }
+  },
+  "Mermaid": {
+    "renderError": "Le diagramme n'a pas pu être rendu."
+  }
+}

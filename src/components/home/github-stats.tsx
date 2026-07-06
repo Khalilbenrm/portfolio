@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Star, GitFork, Users, ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { SectionHeading } from "@/components/common/section-heading";
@@ -8,30 +9,29 @@ import { Button } from "@/components/ui/button";
 import { getGithubStats } from "@/lib/github";
 
 export async function GithubStats({ username, githubUrl }: { username: string; githubUrl: string }) {
-  const stats = await getGithubStats(username);
+  const [stats, t] = await Promise.all([getGithubStats(username), getTranslations("GithubStats")]);
 
   return (
     <section id="github" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <SectionHeading
-          eyebrow="GitHub"
-          title="Activité open-source"
-          description="Données récupérées en direct depuis l'API publique GitHub."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
           className="max-w-xl"
         />
         <Button href={githubUrl} variant="outline" external>
           <FaGithub className="h-4 w-4" />
-          Voir le profil
+          {t("viewProfile")}
         </Button>
       </div>
 
       {!stats ? (
         <Reveal delay={0.1} className="mt-10">
           <Card className="p-8 text-sm text-[var(--muted-foreground)]">
-            Impossible de charger les statistiques GitHub pour le moment (API indisponible ou limite de
-            requêtes atteinte). Réessaie plus tard, ou consulte directement{" "}
+            {t("error")}{" "}
             <a href={githubUrl} className="text-[var(--accent)] underline" target="_blank" rel="noopener noreferrer">
-              le profil GitHub
+              {t("errorLinkText")}
             </a>
             .
           </Card>
@@ -53,9 +53,9 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
                 <p className="text-sm text-[var(--muted-foreground)]">@{stats.profile.login}</p>
               </div>
               <div className="grid w-full grid-cols-3 divide-x divide-[var(--border)] border-t border-[var(--border)] pt-4">
-                <Stat icon={<FaGithub className="h-4 w-4" />} value={stats.profile.publicRepos} label="Dépôts" />
-                <Stat icon={<Star className="h-4 w-4" />} value={stats.totalStars} label="Étoiles" />
-                <Stat icon={<Users className="h-4 w-4" />} value={stats.profile.followers} label="Abonnés" />
+                <Stat icon={<FaGithub className="h-4 w-4" />} value={stats.profile.publicRepos} label={t("statRepos")} />
+                <Stat icon={<Star className="h-4 w-4" />} value={stats.totalStars} label={t("statStars")} />
+                <Stat icon={<Users className="h-4 w-4" />} value={stats.profile.followers} label={t("statFollowers")} />
               </div>
             </Card>
           </Reveal>
@@ -63,7 +63,7 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
           <Reveal delay={0.1} className="lg:col-span-2">
             <Card className="h-full p-8">
               <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-                Langages les plus utilisés
+                {t("topLanguages")}
               </h3>
               <div className="flex flex-col gap-4">
                 {stats.topLanguages.map((lang) => (
@@ -86,7 +86,7 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
 
           <Reveal delay={0.15} className="lg:col-span-3">
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-              Dépôts populaires
+              {t("popularRepos")}
             </h3>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {stats.popularRepos.map((repo) => (
@@ -102,7 +102,7 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
                     <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--muted-foreground)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                   <p className="mt-1.5 line-clamp-2 text-sm text-[var(--muted-foreground)]">
-                    {repo.description ?? "Pas de description."}
+                    {repo.description ?? t("noDescription")}
                   </p>
                   <div className="mt-4 flex items-center gap-4 text-xs text-[var(--muted-foreground)]">
                     {repo.language && <span>{repo.language}</span>}

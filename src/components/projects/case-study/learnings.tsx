@@ -1,10 +1,13 @@
+import { useTranslations } from "next-intl";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/common/reveal";
 import { CaseStudySection } from "./section";
 
 export function Learnings({ items }: { items: string[] }) {
+  const t = useTranslations("CaseStudy.learnings");
+
   return (
-    <CaseStudySection eyebrow="Ce que j'ai appris" title="Compétences acquises">
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map((item, i) => (
           <Reveal key={item} delay={i * 0.05} className="flex items-start gap-3">

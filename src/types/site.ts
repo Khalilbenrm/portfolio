@@ -1,7 +1,13 @@
-export interface SiteConfig {
+export interface LocalizedString {
+  fr: string;
+  en: string;
+}
+
+export interface RawSiteConfig {
   name: string;
   title: string;
-  tagline: string;
+  tagline: LocalizedString;
+  shortTagline: LocalizedString;
   location: string;
   email: string;
   github: string;
@@ -9,7 +15,20 @@ export interface SiteConfig {
   linkedin: string;
   cvUrl: string;
   domain: string;
-  nav: { label: string; href: string }[];
+}
+
+export interface SiteConfig {
+  name: string;
+  title: string;
+  tagline: string;
+  shortTagline: string;
+  location: string;
+  email: string;
+  github: string;
+  githubUsername: string;
+  linkedin: string;
+  cvUrl: string;
+  domain: string;
 }
 
 export type SkillLevel = "learning" | "proficient" | "advanced" | "expert";

@@ -1,0 +1,53 @@
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Placeholder } from "@/components/common/placeholder";
+import { Reveal } from "@/components/common/reveal";
+import type { Project } from "@/types/project";
+
+export function CaseStudyHero({ project }: { project: Project }) {
+  const allTech = project.techStack.flatMap((c) => c.items);
+
+  return (
+    <section className="mx-auto max-w-6xl px-6 pt-16">
+      <Reveal>
+        <Button href="/projects" variant="ghost" size="sm" className="mb-8 -ml-4">
+          <ArrowLeft className="h-4 w-4" />
+          Tous les projets
+        </Button>
+      </Reveal>
+
+      <Reveal delay={0.05}>
+        <Placeholder label={project.name} icon="LayoutTemplate" className="mb-10" />
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <div className="mb-4 flex flex-wrap gap-2">
+          {allTech.slice(0, 5).map((tech) => (
+            <Badge key={tech} variant="outline">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+          {project.name}
+        </h1>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--muted-foreground)]">
+          {project.tagline}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button href={project.github} external>
+            <Github className="h-4 w-4" />
+            Code source
+          </Button>
+          {project.demo && (
+            <Button href={project.demo} variant="outline" external>
+              <ExternalLink className="h-4 w-4" />
+              Démo
+            </Button>
+          )}
+        </div>
+      </Reveal>
+    </section>
+  );
+}

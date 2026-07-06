@@ -1,0 +1,75 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Download, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Placeholder } from "@/components/common/placeholder";
+import type { SiteConfig } from "@/types/site";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } },
+};
+
+export function Hero({ site }: { site: SiteConfig }) {
+  return (
+    <section className="bg-grid relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 70%)",
+        }}
+      />
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 pb-24 pt-20 text-center sm:pt-28"
+      >
+        <motion.div variants={item}>
+          <Placeholder
+            label="Photo de profil"
+            icon="UserRound"
+            aspect="aspect-square"
+            className="h-32 w-32 rounded-full sm:h-36 sm:w-36"
+          />
+        </motion.div>
+
+        <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--surface)] px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          Disponible pour de nouvelles opportunités
+        </motion.div>
+
+        <motion.h1 variants={item} className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+          {site.name}
+          <span className="block text-gradient">{site.title}</span>
+        </motion.h1>
+
+        <motion.p variants={item} className="max-w-2xl text-balance text-lg leading-relaxed text-[var(--muted-foreground)]">
+          {site.tagline}
+        </motion.p>
+
+        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-3">
+          <Button href="/projects" size="lg">
+            Voir mes projets
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+          <Button href={site.cvUrl} variant="outline" size="lg" external>
+            <Download className="h-4 w-4" />
+            Télécharger mon CV
+          </Button>
+          <Button href="/#contact" variant="ghost" size="lg">
+            <Mail className="h-4 w-4" />
+            Me contacter
+          </Button>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}

@@ -19,4 +19,5 @@ export interface Skill {
   category: string;
   level: number; // 0-100
   levelLabel: SkillLevel;
+  icon: string;
 }

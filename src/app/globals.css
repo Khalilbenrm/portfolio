@@ -111,6 +111,47 @@ body {
   color: transparent;
 }
 
+.prose-custom {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+
+.prose-custom > * + * {
+  margin-top: 1.25em;
+}
+
+.prose-custom strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.prose-custom a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration: underline;
+}
+
+.prose-custom ul {
+  list-style: disc;
+  padding-left: 1.25em;
+}
+
+.prose-custom code {
+  background: var(--surface-hover);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+}
+
+.prose-custom pre {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1em;
+  overflow-x: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

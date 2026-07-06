@@ -15,7 +15,7 @@
   "githubUsername": "Khalilbenrm",
   "linkedin": "#",
   "cvUrl": "/cv-placeholder.pdf",
-  "photoUrl": "../public/personal-photo.jpg",
+  "photoUrl": "/personal-photo.png",
   "domain": "https://your-domain.com",
   "_meta": {
     "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. tagline/shortTagline ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."

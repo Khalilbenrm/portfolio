@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 25 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(curl -s http://localhost:3000/ -o /tmp/verify2.html)",
+      "Bash(curl -s http://localhost:3000/projects/project-flow -o /tmp/pf-check.html -w \"HTTP %{http_code}\\\\n\")"
+    ]
+  }
+}

@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { useTheme } from "next-themes";
 
 export function MermaidDiagram({ diagram, title }: { diagram: string; title?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "200px" });
   const rawId = useId().replace(/[^a-zA-Z0-9]/g, "");
   const id = `mermaid-${rawId}`;
   const { resolvedTheme } = useTheme();
@@ -12,6 +14,7 @@ export function MermaidDiagram({ diagram, title }: { diagram: string; title?: st
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (!isInView) return;
     let cancelled = false;
 
     async function render() {
@@ -53,17 +56,20 @@ export function MermaidDiagram({ diagram, title }: { diagram: string; title?: st
     return () => {
       cancelled = true;
     };
-  }, [diagram, id, resolvedTheme]);
+  }, [diagram, id, resolvedTheme, isInView]);
 
   return (
-    <div className="w-full overflow-x-auto rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--surface)] p-6">
+    <div
+      ref={containerRef}
+      className="w-full overflow-x-auto rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--surface)] p-6"
+    >
       {title && <p className="mb-4 text-sm font-medium text-[var(--muted-foreground)]">{title}</p>}
       {error ? (
         <p className="text-sm text-[var(--muted-foreground)]">
           Le diagramme n&apos;a pas pu être rendu.
         </p>
       ) : svg ? (
-        <div ref={ref} className="[&_svg]:mx-auto [&_svg]:max-w-full" dangerouslySetInnerHTML={{ __html: svg }} />
+        <div className="[&_svg]:mx-auto [&_svg]:max-w-full" dangerouslySetInnerHTML={{ __html: svg }} />
       ) : (
         <div className="h-40 w-full animate-pulse rounded-md bg-[var(--surface-hover)]" />
       )}

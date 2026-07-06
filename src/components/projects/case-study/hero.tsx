@@ -30,12 +30,17 @@ export function CaseStudyHero({ project }: { project: Project }) {
             </Badge>
           ))}
         </div>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          {project.name}
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--muted-foreground)]">
-          {project.tagline}
-        </p>
+      </Reveal>
+
+      {/* Not wrapped in Reveal: often the LCP candidate, see case-study/about.tsx. */}
+      <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+        {project.name}
+      </h1>
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--muted-foreground)]">
+        {project.tagline}
+      </p>
+
+      <Reveal delay={0.15}>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={project.github} external>
             <FaGithub className="h-4 w-4" />

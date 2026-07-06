@@ -19,7 +19,7 @@ export function InProgressCard({ project }: { project: InProgressProject }) {
           {project.description}
         </p>
         <div className="mt-4">
-          <Progress value={project.progress} />
+          <Progress value={project.progress} label={`Progression du projet ${project.name}`} />
         </div>
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.tech.map((t) => (

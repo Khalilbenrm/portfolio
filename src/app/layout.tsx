@@ -77,7 +77,7 @@ export default function RootLayout({
           </main>
           <Footer site={site} />
         </ThemeProvider>
-        <Analytics />
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   );

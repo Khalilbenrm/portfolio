@@ -43,7 +43,10 @@ export function Skills({ skills }: { skills: Skill[] }) {
                         {LEVEL_LABELS[skill.levelLabel]}
                       </span>
                     </div>
-                    <Progress value={skill.level} />
+                    <Progress
+                      value={skill.level}
+                      label={`Niveau de maîtrise ${skill.name} : ${LEVEL_LABELS[skill.levelLabel]}`}
+                    />
                   </div>
                 ))}
             </div>

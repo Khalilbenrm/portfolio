@@ -46,14 +46,15 @@ export function Hero({ site }: { site: SiteConfig }) {
           Disponible pour de nouvelles opportunités
         </motion.div>
 
-        <motion.h1 variants={item} className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+        {/* Static, not animated: LCP candidates shouldn't sit at opacity:0 while staggered siblings wait their turn. */}
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
           {site.name}
           <span className="block text-gradient">{site.title}</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p variants={item} className="max-w-2xl text-balance text-lg leading-relaxed text-[var(--muted-foreground)]">
+        <p className="max-w-2xl text-balance text-lg leading-relaxed text-[var(--muted-foreground)]">
           {site.tagline}
-        </motion.p>
+        </p>
 
         <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-3">
           <Button href="/projects" size="lg">

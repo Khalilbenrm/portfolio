@@ -17,16 +17,25 @@ export function MermaidDiagram({ diagram, title }: { diagram: string; title?: st
     async function render() {
       try {
         const mermaid = (await import("mermaid")).default;
+        const isDark = resolvedTheme === "dark";
         mermaid.initialize({
           startOnLoad: false,
-          theme: resolvedTheme === "dark" ? "dark" : "default",
+          theme: isDark ? "dark" : "default",
           securityLevel: "strict",
           fontFamily: "var(--font-geist-sans)",
           themeVariables: {
-            primaryColor: resolvedTheme === "dark" ? "#1a1830" : "#eeedfd",
-            primaryTextColor: resolvedTheme === "dark" ? "#f4f4f6" : "#0a0a0b",
-            primaryBorderColor: "#8b85f5",
-            lineColor: resolvedTheme === "dark" ? "#4a4a55" : "#c7c7d1",
+            background: "transparent",
+            mainBkg: isDark ? "#15131f" : "#f2f1fd",
+            primaryColor: isDark ? "#15131f" : "#f2f1fd",
+            primaryTextColor: isDark ? "#f4f4f6" : "#0a0a0b",
+            primaryBorderColor: isDark ? "#6f68d8" : "#8b85f5",
+            secondaryColor: isDark ? "#1a1830" : "#eeedfd",
+            tertiaryColor: isDark ? "#1a1830" : "#eeedfd",
+            lineColor: isDark ? "#55555f" : "#c7c7d1",
+            textColor: isDark ? "#f4f4f6" : "#0a0a0b",
+            clusterBkg: isDark ? "#131318" : "#f7f7f9",
+            clusterBorder: isDark ? "#2a2a32" : "#e2e2e7",
+            edgeLabelBackground: isDark ? "#0f0f12" : "#ffffff",
             fontSize: "14px",
           },
         });

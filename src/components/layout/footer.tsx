@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import type { SiteConfig } from "@/types/site";
 
 export function Footer({ site }: { site: SiteConfig }) {
@@ -17,7 +18,7 @@ export function Footer({ site }: { site: SiteConfig }) {
             aria-label="GitHub"
             className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
           >
-            <Github className="h-5 w-5" />
+            <FaGithub className="h-5 w-5" />
           </Link>
           <Link
             href={site.linkedin}
@@ -26,7 +27,7 @@ export function Footer({ site }: { site: SiteConfig }) {
             aria-label="LinkedIn"
             className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
           >
-            <Linkedin className="h-5 w-5" />
+            <FaLinkedin className="h-5 w-5" />
           </Link>
           <a
             href={`mailto:${site.email}`}

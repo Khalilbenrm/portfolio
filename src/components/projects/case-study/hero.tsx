@@ -1,4 +1,5 @@
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Placeholder } from "@/components/common/placeholder";
@@ -37,7 +38,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={project.github} external>
-            <Github className="h-4 w-4" />
+            <FaGithub className="h-4 w-4" />
             Code source
           </Button>
           {project.demo && (

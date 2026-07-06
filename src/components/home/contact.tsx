@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Mail, Download } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
@@ -6,9 +7,9 @@ import { ContactForm } from "./contact-form";
 import type { SiteConfig } from "@/types/site";
 
 export function Contact({ site }: { site: SiteConfig }) {
-  const links = [
-    { label: "GitHub", href: site.github, icon: Github },
-    { label: "LinkedIn", href: site.linkedin, icon: Linkedin },
+  const links: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] = [
+    { label: "GitHub", href: site.github, icon: FaGithub },
+    { label: "LinkedIn", href: site.linkedin, icon: FaLinkedin },
     { label: "Email", href: `mailto:${site.email}`, icon: Mail },
     { label: "CV", href: site.cvUrl, icon: Download },
   ];

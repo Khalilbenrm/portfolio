@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Github, Star, GitFork, Users, ArrowUpRight } from "lucide-react";
+import { Star, GitFork, Users, ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
@@ -19,7 +20,7 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
           className="max-w-xl"
         />
         <Button href={githubUrl} variant="outline" external>
-          <Github className="h-4 w-4" />
+          <FaGithub className="h-4 w-4" />
           Voir le profil
         </Button>
       </div>
@@ -52,7 +53,7 @@ export async function GithubStats({ username, githubUrl }: { username: string; g
                 <p className="text-sm text-[var(--muted-foreground)]">@{stats.profile.login}</p>
               </div>
               <div className="grid w-full grid-cols-3 divide-x divide-[var(--border)] border-t border-[var(--border)] pt-4">
-                <Stat icon={<Github className="h-4 w-4" />} value={stats.profile.publicRepos} label="Dépôts" />
+                <Stat icon={<FaGithub className="h-4 w-4" />} value={stats.profile.publicRepos} label="Dépôts" />
                 <Stat icon={<Star className="h-4 w-4" />} value={stats.totalStars} label="Étoiles" />
                 <Stat icon={<Users className="h-4 w-4" />} value={stats.profile.followers} label="Abonnés" />
               </div>

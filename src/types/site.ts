@@ -14,6 +14,7 @@ export interface RawSiteConfig {
   githubUsername: string;
   linkedin: string;
   cvUrl: string;
+  photoUrl: string;
   domain: string;
 }
 
@@ -28,6 +29,7 @@ export interface SiteConfig {
   githubUsername: string;
   linkedin: string;
   cvUrl: string;
+  photoUrl: string;
   domain: string;
 }
 
@@ -39,4 +41,5 @@ export interface Skill {
   level: number; // 0-100
   levelLabel: SkillLevel;
   icon: string;
+  
 }

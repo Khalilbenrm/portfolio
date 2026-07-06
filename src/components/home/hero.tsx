@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Placeholder } from "@/components/common/placeholder";
 import type { SiteConfig } from "@/types/site";
 
 const container = {
@@ -36,11 +36,13 @@ export function Hero({ site }: { site: SiteConfig }) {
         className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 pb-24 pt-20 text-center sm:pt-28"
       >
         <motion.div variants={item}>
-          <Placeholder
-            label={t("profilePhoto")}
-            icon="UserRound"
-            aspect="aspect-square"
-            className="h-32 w-32 rounded-full sm:h-36 sm:w-36"
+          <Image
+            src={site.photoUrl}
+            alt={t("profilePhoto")}
+            width={144}
+            height={144}
+            priority
+            className="h-32 w-32 rounded-full border border-[var(--card-border)] object-cover sm:h-36 sm:w-36"
           />
         </motion.div>
 

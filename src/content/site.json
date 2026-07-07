@@ -1,5 +1,6 @@
 {
   "name": "Khalil BEN ROMDHANE",
+  "shortName": "Khalil BR",
   "title": "QA & QC Engineer | ISTQB en préparation | Software Engineer",
   "tagline": {
     "fr": "Ingénieur logiciel en reconversion vers la QA. Ma compréhension du code me permet de concevoir des tests plus pertinents et de dialoguer efficacement avec les développeurs. Automatisation des tests avec Selenium, Postman et JUnit, méthodologies Agile. Certification ISTQB Foundation Level en préparation.",
@@ -23,6 +24,6 @@
   "photoUrl": "/personal-photo.png",
   "domain": "https://your-domain.com",
   "_meta": {
-    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. phone (lien tel:) et whatsapp (lien wa.me, chiffres uniquement extraits) sont deux numéros distincts et indépendants — whatsapp est encore un placeholder à remplacer. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
+    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. phone (lien tel:) et whatsapp (lien wa.me, chiffres uniquement extraits) sont deux numéros distincts et indépendants — whatsapp est encore un placeholder à remplacer. shortName est une version courte de name utilisée uniquement pour le titre d'onglet (metadata title + titre dynamique par section) ; name reste utilisé pour le Hero et le footer. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
   }
 }

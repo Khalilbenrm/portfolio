@@ -43,8 +43,8 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(site.domain),
     title: {
-      default: `${site.name} — ${site.title}`,
-      template: `%s — ${site.name}`,
+      default: `${site.shortName} | ${site.title}`,
+      template: `%s | ${site.shortName}`,
     },
     description: site.tagline,
     keywords: [
@@ -63,7 +63,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      title: `${site.name} — ${site.title}`,
+      title: `${site.name} | ${site.title}`,
       description: site.tagline,
       url: locale === routing.defaultLocale ? site.domain : `${site.domain}/${locale}`,
       siteName: site.name,
@@ -71,7 +71,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${site.name} — ${site.title}`,
+      title: `${site.name} | ${site.title}`,
       description: site.tagline,
     },
     robots: { index: true, follow: true },

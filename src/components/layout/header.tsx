@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
+import { useActiveSection } from "@/hooks/use-active-section";
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,7 @@ export function Header({ site }: { site: SiteConfig }) {
   const tHeader = useTranslations("Header");
   const tHero = useTranslations("Hero");
   const pathname = usePathname();
+  const activeSection = useActiveSection();
 
   // Link to "/" is a no-op when already on the home page (no route change),
   // so it would otherwise leave the visitor stranded wherever they'd scrolled to.
@@ -36,12 +38,16 @@ export function Header({ site }: { site: SiteConfig }) {
     }
   };
 
-  // Hash-anchor items (#about, #skills, ...) all live on "/" with no reliable
-  // way to tell which section is in view from the pathname alone, so only
-  // "real" routes ("/" itself and "/projects") get an active highlight.
+  // Hash-anchor items (#about, #skills, ...) all live on "/", so their active
+  // state is driven by scroll position (useActiveSection) rather than the
+  // pathname. "Home" is only active while at the top, before any section
+  // has scrolled into view.
   const isActive = (href: string) => {
-    if (href.includes("#")) return false;
-    if (href === "/") return pathname === "/";
+    if (href.includes("#")) {
+      if (pathname !== "/") return false;
+      return activeSection === href.split("#")[1];
+    }
+    if (href === "/") return pathname === "/" && activeSection === null;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

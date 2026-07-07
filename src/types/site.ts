@@ -5,6 +5,7 @@ export interface LocalizedString {
 
 export interface RawSiteConfig {
   name: string;
+  shortName: string;
   title: string;
   tagline: LocalizedString;
   shortTagline: LocalizedString;
@@ -22,6 +23,7 @@ export interface RawSiteConfig {
 
 export interface SiteConfig {
   name: string;
+  shortName: string;
   title: string;
   tagline: string;
   shortTagline: string;

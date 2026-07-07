@@ -6,6 +6,7 @@ import { Skills } from "@/components/home/skills";
 import { FeaturedProjects } from "@/components/home/featured-projects";
 import { Education } from "@/components/home/education";
 import { Contact } from "@/components/home/contact";
+import { SectionTitleSync } from "@/components/home/section-title-sync";
 import { Separator } from "@/components/ui/separator";
 import {
   getSiteConfig,
@@ -34,6 +35,7 @@ export default async function Home({
 
   return (
     <>
+      <SectionTitleSync siteName={site.shortName} baseTitle={`${site.shortName} | ${site.title}`} />
       <Hero site={site} />
       <Separator />
       <About headline={about.headline} focus={about.focus} content={about.content} photoUrl={site.photoUrl} />

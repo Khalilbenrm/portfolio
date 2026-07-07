@@ -21,6 +21,7 @@
     "rights": "All rights reserved."
   },
   "Hero": {
+    "greeting": "Hi, I'm",
     "availableBadge": "Available for new opportunities",
     "ctaProjects": "View my projects",
     "ctaCv": "Download my resume",
@@ -29,7 +30,12 @@
   },
   "About": {
     "eyebrow": "About",
-    "illustration": "Quality & testing"
+    "terminalTitle": "test-suite.spec",
+    "terminalLine1": "Selenium — end-to-end flows",
+    "terminalLine2": "Postman — API contracts",
+    "terminalLine3": "JUnit — business logic",
+    "terminalLine4": "ISTQB Foundation — certification",
+    "terminalSummary": "3 tests passed · 1 in progress"
   },
   "Experience": {
     "eyebrow": "Journey",

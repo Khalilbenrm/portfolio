@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useActiveSection } from "@/hooks/use-active-section";
 
-export function SectionTitleSync({ siteName, baseTitle }: { siteName: string; baseTitle: string }) {
+export function SectionTitleSync({ siteName }: { siteName: string }) {
   const t = useTranslations("Nav");
   const active = useActiveSection();
 
   useEffect(() => {
-    document.title = active ? `${siteName} | ${t(active)}` : baseTitle;
-  }, [active, siteName, baseTitle, t]);
+    document.title = `${siteName} | ${t(active ?? "home")}`;
+  }, [active, siteName, t]);
 
   return null;
 }

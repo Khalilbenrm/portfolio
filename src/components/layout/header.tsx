@@ -41,13 +41,15 @@ export function Header({ site }: { site: SiteConfig }) {
   // Hash-anchor items (#about, #skills, ...) all live on "/", so their active
   // state is driven by scroll position (useActiveSection) rather than the
   // pathname. "Home" is only active while at the top, before any section
-  // has scrolled into view.
+  // has scrolled into view. "/projects" is a real route, but the home page
+  // also has a "projects" preview section, so it's active either way.
   const isActive = (href: string) => {
     if (href.includes("#")) {
       if (pathname !== "/") return false;
       return activeSection === href.split("#")[1];
     }
     if (href === "/") return pathname === "/" && activeSection === null;
+    if (href === "/projects" && pathname === "/" && activeSection === "projects") return true;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

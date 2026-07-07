@@ -82,18 +82,25 @@ export function Hero({ site }: { site: SiteConfig }) {
             className="pointer-events-none absolute inset-x-6 top-6 -z-10 aspect-square rounded-full opacity-80 blur-2xl"
             style={{ background: "var(--surface)" }}
           />
-          <Image
-            src="/personal-photo-cutout.png"
-            alt={t("profilePhoto")}
-            width={992}
-            height={1077}
-            priority
-            className="relative h-full w-auto max-w-full object-contain"
-          />
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="relative h-full w-full"
+          >
+            <Image
+              src="/personal-photo-cutout.png"
+              alt={t("profilePhoto")}
+              width={992}
+              height={1077}
+              priority
+              className="relative h-full w-auto max-w-full object-contain"
+            />
+          </motion.div>
         </motion.div>
 
         <motion.div variants={item} className="mt-3 sm:mt-5">
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl">{site.name}</h1>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)]">{t("greeting")}</p>
+          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-5xl">{site.name}</h1>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
             {site.title}
           </p>
@@ -110,7 +117,10 @@ export function Hero({ site }: { site: SiteConfig }) {
           variants={item}
           className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)]"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+          </span>
           {t("availableBadge")}
         </motion.div>
 

@@ -35,10 +35,10 @@ export default async function Home({
 
   return (
     <>
-      <SectionTitleSync siteName={site.shortName} baseTitle={`${site.shortName} | ${site.title}`} />
+      <SectionTitleSync siteName={site.shortName} />
       <Hero site={site} />
       <Separator />
-      <About headline={about.headline} focus={about.focus} content={about.content} photoUrl={site.photoUrl} />
+      <About headline={about.headline} focus={about.focus} content={about.content} />
       <Separator />
       <Experience items={experience} />
       <Separator />

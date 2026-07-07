@@ -28,7 +28,7 @@ export function Hero({ site }: { site: SiteConfig }) {
   ];
 
   return (
-    <section className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center overflow-hidden px-6 pb-12 pt-8 sm:pb-20 sm:pt-24">
+    <section className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center overflow-hidden px-6 py-6 sm:py-10">
       {/* soft background blobs */}
       <div
         className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full opacity-60 blur-3xl"

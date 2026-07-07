@@ -59,11 +59,17 @@
     "eyebrow": "Contact",
     "title": "Let's talk about your next project",
     "description": "Whether it's an opportunity, a collaboration, or just a chat — feel free to reach out.",
+    "responseNote": "I usually reply within 24 to 48 hours",
+    "formTitle": "Send me a message",
+    "formSubtitle": "I personally reply to every request.",
     "linkGithub": "GitHub",
     "linkLinkedin": "LinkedIn",
+    "linkLinkedinHint": "View profile",
     "linkEmail": "Email",
+    "linkPhone": "Phone",
+    "linkWhatsapp": "WhatsApp",
     "linkCv": "Resume",
-    "comingSoon": "Coming soon"
+    "linkCvHint": "Download PDF"
   },
   "ContactForm": {
     "nameLabel": "Name",

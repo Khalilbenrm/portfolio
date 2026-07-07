@@ -10,6 +10,8 @@ export interface RawSiteConfig {
   shortTagline: LocalizedString;
   location: string;
   email: string;
+  phone: string;
+  whatsapp: string;
   github: string;
   githubUsername: string;
   linkedin: string;
@@ -25,6 +27,8 @@ export interface SiteConfig {
   shortTagline: string;
   location: string;
   email: string;
+  phone: string;
+  whatsapp: string;
   github: string;
   githubUsername: string;
   linkedin: string;

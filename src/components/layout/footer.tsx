@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail, Phone } from "lucide-react";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import type { SiteConfig } from "@/types/site";
 
 export function Footer({ site }: { site: SiteConfig }) {
@@ -38,6 +38,22 @@ export function Footer({ site }: { site: SiteConfig }) {
             className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
           >
             <Mail className="h-5 w-5" />
+          </a>
+          <a
+            href={`tel:${site.phone.replace(/\s/g, "")}`}
+            aria-label="Phone"
+            className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
+          >
+            <Phone className="h-5 w-5" />
+          </a>
+          <a
+            href={`https://wa.me/${site.whatsapp.replace(/\D/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
+          >
+            <FaWhatsapp className="h-5 w-5" />
           </a>
         </div>
       </div>

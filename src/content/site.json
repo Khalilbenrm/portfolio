@@ -11,6 +11,8 @@
   },
   "location": "France",
   "email": "benrm.khalil@gmail.com",
+  "phone": "+33 7 59 30 07 47",
+  "whatsapp": "+33 7 59 30 07 47",
   "github": "https://github.com/Khalilbenrm",
   "githubUsername": "Khalilbenrm",
   "linkedin": "https://www.linkedin.com/in/khalil-ben-romdhane-3719462b8/",
@@ -21,6 +23,6 @@
   "photoUrl": "/personal-photo.png",
   "domain": "https://your-domain.com",
   "_meta": {
-    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
+    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. phone (lien tel:) et whatsapp (lien wa.me, chiffres uniquement extraits) sont deux numéros distincts et indépendants — whatsapp est encore un placeholder à remplacer. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
   }
 }

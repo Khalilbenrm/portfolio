@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import type { SiteConfig } from "@/types/site";
 
@@ -25,6 +25,7 @@ export function Hero({ site }: { site: SiteConfig }) {
     { href: site.github, icon: FaGithub, label: "GitHub" },
     { href: site.linkedin, icon: FaLinkedin, label: "LinkedIn" },
     { href: `mailto:${site.email}`, icon: Mail, label: "Email" },
+    { href: `https://wa.me/${site.whatsapp.replace(/\D/g, "")}`, icon: FaWhatsapp, label: "WhatsApp" },
     { href: null, icon: MapPin, label: site.location },
   ];
 

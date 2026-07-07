@@ -13,7 +13,6 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "github": "GitHub",
     "contact": "Contact"
   },
   "Footer": {
@@ -47,20 +46,6 @@
     "title": "Technical case studies",
     "description": "Two backend systems analyzed in depth: architecture, patterns, and real trade-offs.",
     "viewAll": "All projects"
-  },
-  "GithubStats": {
-    "eyebrow": "GitHub",
-    "title": "Open-source activity",
-    "description": "Data fetched live from the public GitHub API.",
-    "viewProfile": "View profile",
-    "error": "Couldn't load GitHub stats right now (API unavailable or rate limit reached). Try again later, or check out",
-    "errorLinkText": "the GitHub profile",
-    "topLanguages": "Most used languages",
-    "popularRepos": "Popular repositories",
-    "statRepos": "Repos",
-    "statStars": "Stars",
-    "statFollowers": "Followers",
-    "noDescription": "No description."
   },
   "Contact": {
     "eyebrow": "Contact",

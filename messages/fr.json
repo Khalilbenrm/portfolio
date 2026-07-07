@@ -13,7 +13,6 @@
     "about": "À propos",
     "skills": "Compétences",
     "projects": "Projets",
-    "github": "GitHub",
     "contact": "Contact"
   },
   "Footer": {
@@ -47,20 +46,6 @@
     "title": "Études de cas techniques",
     "description": "Deux systèmes backend analysés en profondeur : architecture, patterns et arbitrages réels.",
     "viewAll": "Tous les projets"
-  },
-  "GithubStats": {
-    "eyebrow": "GitHub",
-    "title": "Activité open-source",
-    "description": "Données récupérées en direct depuis l'API publique GitHub.",
-    "viewProfile": "Voir le profil",
-    "error": "Impossible de charger les statistiques GitHub pour le moment (API indisponible ou limite de requêtes atteinte). Réessaie plus tard, ou consulte directement",
-    "errorLinkText": "le profil GitHub",
-    "topLanguages": "Langages les plus utilisés",
-    "popularRepos": "Dépôts populaires",
-    "statRepos": "Dépôts",
-    "statStars": "Étoiles",
-    "statFollowers": "Abonnés",
-    "noDescription": "Pas de description."
   },
   "Contact": {
     "eyebrow": "Contact",

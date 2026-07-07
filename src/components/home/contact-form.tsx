@@ -30,7 +30,7 @@ export function ContactForm({ email }: { email: string }) {
             required
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-            className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
+            className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
             placeholder={t("namePlaceholder")}
           />
         </div>
@@ -44,7 +44,7 @@ export function ContactForm({ email }: { email: string }) {
             required
             value={form.from}
             onChange={(e) => setForm((f) => ({ ...f, from: e.target.value }))}
-            className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
+            className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
             placeholder={t("emailPlaceholder")}
           />
         </div>
@@ -59,7 +59,7 @@ export function ContactForm({ email }: { email: string }) {
           rows={5}
           value={form.message}
           onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-          className="resize-none rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
+          className="resize-none rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm outline-none ring-[var(--ring)] focus:ring-2"
           placeholder={t("messagePlaceholder")}
         />
       </div>

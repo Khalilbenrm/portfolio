@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ContactForm } from "./contact-form";
 import type { SiteConfig } from "@/types/site";
 
@@ -31,17 +32,13 @@ export function Contact({ site }: { site: SiteConfig }) {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-disabled={isPlaceholder}
-                className="group flex items-center justify-between gap-3 rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card)] px-6 py-4 transition-colors hover:bg-[var(--surface-hover)]"
+                className="group flex items-center justify-between gap-3 rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card)] px-6 py-4 transition-colors hover:border-[var(--accent)]"
               >
                 <span className="flex items-center gap-3">
                   <Icon className="h-4.5 w-4.5 text-[var(--accent)]" />
                   <span className="font-medium">{label}</span>
                 </span>
-                {isPlaceholder && (
-                  <span className="rounded-full bg-[var(--surface)] px-2.5 py-1 text-xs text-[var(--muted-foreground)]">
-                    {t("comingSoon")}
-                  </span>
-                )}
+                {isPlaceholder && <Badge variant="outline">{t("comingSoon")}</Badge>}
               </a>
             );
           })}

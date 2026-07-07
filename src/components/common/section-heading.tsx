@@ -17,7 +17,12 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--accent)]">
+        <p
+          className={cn(
+            "mb-3 text-sm font-semibold uppercase tracking-widest text-[var(--accent)]",
+            align === "center" && "text-center"
+          )}
+        >
           {eyebrow}
         </p>
       )}

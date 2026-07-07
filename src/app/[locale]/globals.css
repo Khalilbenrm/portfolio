@@ -1,53 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0b;
-  --surface: #f7f7f8;
-  --surface-hover: #efeff1;
+  --background: #f4f1ea;
+  --foreground: #17191a;
+  --surface: #eeeae0;
+  --surface-hover: #e6e1d5;
   --card: #ffffff;
-  --card-border: #e7e7ea;
-  --muted: #6b6b74;
-  --muted-foreground: #57575f;
-  --border: #e5e5e9;
-  --accent: #5750e8;
+  --card-border: #e6e1d3;
+  --muted: #71756e;
+  --muted-foreground: #62665f;
+  --border: #e6e1d3;
+  --accent: #3f8f68;
   --accent-foreground: #ffffff;
-  --accent-soft: #eeedfd;
-  --ring: #5750e8;
-  --radius: 0.875rem;
+  --accent-soft: #e2f0e8;
+  --ring: #3f8f68;
+  --radius: 1.25rem;
+  --blob-a: #f6d3ce;
+  --blob-b: #d2e3f3;
+  --blob-c: #e7d9f2;
 }
 
 .dark {
-  --background: #08080a;
-  --foreground: #f4f4f6;
-  --surface: #0f0f12;
-  --surface-hover: #17171b;
-  --card: #101013;
-  --card-border: #202024;
-  --muted: #9a9aa4;
-  --muted-foreground: #a5a5b0;
-  --border: #202024;
-  --accent: #8b85f5;
-  --accent-foreground: #08080a;
-  --accent-soft: #1a1830;
-  --ring: #8b85f5;
+  --background: #0e0f0d;
+  --foreground: #f2f1ec;
+  --surface: #161815;
+  --surface-hover: #1e211d;
+  --card: #171915;
+  --card-border: #272a24;
+  --muted: #9aa199;
+  --muted-foreground: #a7ada4;
+  --border: #272a24;
+  --accent: #52c98d;
+  --accent-foreground: #062814;
+  --accent-soft: #142a1f;
+  --ring: #52c98d;
+  --blob-a: #3a2224;
+  --blob-b: #1f2c38;
+  --blob-c: #2b2333;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light):not(.dark) {
-    --background: #08080a;
-    --foreground: #f4f4f6;
-    --surface: #0f0f12;
-    --surface-hover: #17171b;
-    --card: #101013;
-    --card-border: #202024;
-    --muted: #9a9aa4;
-    --muted-foreground: #a5a5b0;
-    --border: #202024;
-    --accent: #8b85f5;
-    --accent-foreground: #08080a;
-    --accent-soft: #1a1830;
-    --ring: #8b85f5;
+    --background: #0e0f0d;
+    --foreground: #f2f1ec;
+    --surface: #161815;
+    --surface-hover: #1e211d;
+    --card: #171915;
+    --card-border: #272a24;
+    --muted: #9aa199;
+    --muted-foreground: #a7ada4;
+    --border: #272a24;
+    --accent: #52c98d;
+    --accent-foreground: #062814;
+    --accent-soft: #142a1f;
+    --ring: #52c98d;
+    --blob-a: #3a2224;
+    --blob-b: #1f2c38;
+    --blob-c: #2b2333;
   }
 }
 
@@ -66,8 +75,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-ring: var(--ring);
   --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 0.25rem);
-  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-sm: calc(var(--radius) - 0.25rem);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -90,25 +99,10 @@ body {
   color: var(--accent-foreground);
 }
 
-.bg-grid {
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
+/* Flat panel background — no blur/backdrop-filter, kept as a plain class so
+   existing usages (header, case-study CTA) don't need per-site edits. */
 .glass {
-  background: color-mix(in srgb, var(--card) 70%, transparent);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid color-mix(in srgb, var(--card-border) 80%, transparent);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--foreground) 20%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background: var(--card);
 }
 
 .prose-custom {

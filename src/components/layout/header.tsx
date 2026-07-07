@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
+import { Button } from "@/components/ui/button";
 import type { SiteConfig } from "@/types/site";
 
 const NAV_ITEMS = [
@@ -22,6 +23,7 @@ export function Header({ site }: { site: SiteConfig }) {
   const [open, setOpen] = useState(false);
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
+  const tHero = useTranslations("Hero");
   const pathname = usePathname();
 
   // Link to "/" is a no-op when already on the home page (no route change),
@@ -34,25 +36,28 @@ export function Header({ site }: { site: SiteConfig }) {
 
   return (
     <header className="glass sticky top-0 z-50 w-full border-b">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight"
+          className="flex items-center gap-2.5 text-sm font-semibold tracking-tight"
           onClick={() => {
             setOpen(false);
             scrollToTopIfHome("/");
           }}
         >
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-xs font-bold text-[var(--accent-foreground)]">
+            {site.name.charAt(0)}
+          </span>
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}
               href={item.href}
               onClick={() => scrollToTopIfHome(item.href)}
-              className="text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
+              className="rounded-full px-3.5 py-1.5 text-sm text-[var(--muted-foreground)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]"
             >
               {t(item.key)}
             </Link>
@@ -63,6 +68,10 @@ export function Header({ site }: { site: SiteConfig }) {
           <div className="hidden items-center gap-2 md:flex">
             <LanguageSwitcher />
             <ThemeToggle />
+            <Button href={site.cvUrl} variant="dark" size="sm" external className="ml-1">
+              {tHero("ctaCv")}
+              <Download className="h-3.5 w-3.5" />
+            </Button>
           </div>
           <button
             type="button"
@@ -93,7 +102,7 @@ export function Header({ site }: { site: SiteConfig }) {
                     setOpen(false);
                     scrollToTopIfHome(item.href);
                   }}
-                  className="rounded-lg px-3 py-2.5 text-sm text-[var(--muted-foreground)] hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]"
+                  className="rounded-full px-3.5 py-2.5 text-sm text-[var(--muted-foreground)] hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]"
                 >
                   {t(item.key)}
                 </Link>
@@ -101,6 +110,10 @@ export function Header({ site }: { site: SiteConfig }) {
               <div className="mt-2 flex items-center gap-2 px-3">
                 <LanguageSwitcher />
                 <ThemeToggle />
+                <Button href={site.cvUrl} variant="dark" size="sm" external>
+                  {tHero("ctaCv")}
+                  <Download className="h-3.5 w-3.5" />
+                </Button>
               </div>
             </div>
           </motion.nav>

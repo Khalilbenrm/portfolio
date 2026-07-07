@@ -11,7 +11,7 @@ export function Footer({ site }: { site: SiteConfig }) {
     <footer className="mt-32 border-t border-[var(--border)]">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-10 sm:flex-row sm:justify-between">
         <p className="text-sm text-[var(--muted-foreground)]">
-          © {new Date().getFullYear()} {site.name}. {t("rights")}
+          © {new Date().getFullYear()} {site.name} — {t("rights")}
         </p>
         <div className="flex items-center gap-4">
           <Link

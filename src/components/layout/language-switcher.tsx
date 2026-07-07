@@ -22,7 +22,7 @@ export function LanguageSwitcher() {
           href={pathname}
           locale={locale}
           className={cn(
-            "rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide transition-colors",
+            "rounded-full px-2.5 py-1 text-xs font-semibold uppercase transition-colors",
             locale === activeLocale
               ? "bg-[var(--accent)] text-[var(--accent-foreground)]"
               : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"

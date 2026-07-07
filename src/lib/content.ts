@@ -6,6 +6,7 @@ import skillsJson from "@/content/skills.json";
 import type { Locale } from "@/i18n/routing";
 import type { RawSiteConfig, SiteConfig, Skill } from "@/types/site";
 import type { InProgressProject, Project, ProjectFrontmatter } from "@/types/project";
+import type { EducationEntry, ExperienceEntry } from "@/types/experience";
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
 const PROJECTS_DIR = path.join(CONTENT_DIR, "projects");
@@ -40,6 +41,18 @@ export function getAboutContent(locale: Locale) {
     yearsNote: data.yearsNote as string,
     content: content.trim(),
   };
+}
+
+export function getExperience(locale: Locale): ExperienceEntry[] {
+  const filePath = path.join(CONTENT_DIR, `experience.${locale}.json`);
+  const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as { items: ExperienceEntry[] };
+  return raw.items;
+}
+
+export function getEducation(locale: Locale): EducationEntry[] {
+  const filePath = path.join(CONTENT_DIR, `education.${locale}.json`);
+  const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as { items: EducationEntry[] };
+  return raw.items;
 }
 
 export function getAllProjects(locale: Locale): Project[] {

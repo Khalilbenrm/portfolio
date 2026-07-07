@@ -11,6 +11,8 @@
   "Nav": {
     "home": "Accueil",
     "about": "À propos",
+    "experience": "Expérience",
+    "education": "Formation",
     "skills": "Compétences",
     "projects": "Projets",
     "contact": "Contact"
@@ -28,6 +30,18 @@
   "About": {
     "eyebrow": "À propos",
     "illustration": "Photo / illustration"
+  },
+  "Experience": {
+    "eyebrow": "Parcours",
+    "title": "Expérience professionnelle",
+    "description": "Du développement backend à la reconversion vers la qualité logicielle.",
+    "current": "En cours",
+    "selfDirected": "Auto-formation",
+    "viewCaseStudy": "Voir l'étude de cas"
+  },
+  "Education": {
+    "eyebrow": "Formation",
+    "title": "Formation académique"
   },
   "Skills": {
     "eyebrow": "Compétences",

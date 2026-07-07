@@ -14,6 +14,8 @@ import type { SiteConfig } from "@/types/site";
 const NAV_ITEMS = [
   { key: "home", href: "/" },
   { key: "about", href: "/#about" },
+  { key: "experience", href: "/#experience" },
+  { key: "education", href: "/#education" },
   { key: "skills", href: "/#skills" },
   { key: "projects", href: "/projects" },
   { key: "contact", href: "/#contact" },
@@ -45,7 +47,7 @@ export function Header({ site }: { site: SiteConfig }) {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-6">
         <Link
           href="/"
           className="shrink-0 text-base font-bold tracking-tight"
@@ -57,7 +59,7 @@ export function Header({ site }: { site: SiteConfig }) {
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}

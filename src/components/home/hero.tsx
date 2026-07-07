@@ -68,7 +68,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </div>
 
-        <motion.div variants={item} className="relative -mt-6 w-80 sm:-mt-10 sm:w-[27rem]">
+        <motion.div variants={item} className="relative -mt-4 h-[24svh] max-w-full sm:-mt-6 sm:h-[42svh]">
           <div
             className="pointer-events-none absolute inset-x-6 top-6 -z-10 aspect-square rounded-full opacity-80 blur-2xl"
             style={{ background: "var(--surface)" }}
@@ -79,33 +79,33 @@ export function Hero({ site }: { site: SiteConfig }) {
             width={992}
             height={1077}
             priority
-            className="relative h-auto w-full object-contain"
+            className="relative h-full w-auto max-w-full object-contain"
           />
         </motion.div>
 
-        <motion.div variants={item} className="mt-4 sm:mt-8">
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-6xl">{site.name}</h1>
-          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] sm:mt-3">
+        <motion.div variants={item} className="mt-3 sm:mt-5">
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl">{site.name}</h1>
+          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
             {site.title}
           </p>
         </motion.div>
 
         <motion.p
           variants={item}
-          className="mt-4 max-w-xl text-balance text-base leading-relaxed text-[var(--muted-foreground)] sm:mt-6 sm:text-lg"
+          className="mt-3 max-w-xl text-balance text-base leading-relaxed text-[var(--muted-foreground)] sm:mt-4 sm:text-lg"
         >
           {site.tagline}
         </motion.p>
 
         <motion.div
           variants={item}
-          className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)] sm:mt-5"
+          className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--card-border)] bg-[var(--card)] px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)]"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
           {t("availableBadge")}
         </motion.div>
 
-        <motion.div variants={item} className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-3">
+        <motion.div variants={item} className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:mt-5 sm:gap-3">
           <Button href="/projects" size="lg" className="h-10 px-5 text-sm sm:h-12 sm:px-8 sm:text-base">
             {t("ctaProjects")}
             <ArrowRight className="h-4 w-4" />

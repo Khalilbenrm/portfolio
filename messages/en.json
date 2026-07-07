@@ -32,14 +32,7 @@
   "Skills": {
     "eyebrow": "Skills",
     "title": "A complete toolkit, from backend to finished product",
-    "description": "Technologies and practices used regularly, with an indicative proficiency level.",
-    "levels": {
-      "learning": "Learning",
-      "proficient": "Proficient",
-      "advanced": "Advanced",
-      "expert": "Expert"
-    },
-    "progressLabel": "Proficiency level {name}: {level}"
+    "description": "Technologies and practices used regularly."
   },
   "FeaturedProjects": {
     "eyebrow": "Projects",

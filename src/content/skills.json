@@ -1,25 +1,25 @@
 {
   "_meta": {
-    "note": "Niveaux (0-100) à ajuster librement — estimés à partir de la profondeur d'usage observée dans project-flow (Java/Spring/Microservices/Docker/REST) et smart-building-iot-java (IoT/MQTT/Kafka), complétés par des niveaux par défaut raisonnables pour les compétences non démontrées dans ces deux dépôts (JavaFX, Python, Node.js, Cloud...)."
+    "note": "Niveaux (0-100) à ajuster librement — estimés à partir de la profondeur d'usage observée dans project-flow (Java/Spring/Microservices/Docker/REST) et smart-building-iot-java (IoT/MQTT/Kafka), complétés par des niveaux par défaut raisonnables pour les compétences non démontrées dans ces deux dépôts (JavaFX, Python, Node.js, Cloud...). Le niveau n'est plus affiché visuellement, il sert uniquement à trier chaque catégorie (du plus maîtrisé au moins maîtrisé)."
   },
   "skills": [
-    { "name": "Java", "category": "Backend", "level": 90, "levelLabel": "expert", "icon": "Coffee" },
-    { "name": "Spring / Spring Boot", "category": "Backend", "level": 88, "levelLabel": "expert", "icon": "Leaf" },
-    { "name": "Microservices", "category": "Backend", "level": 82, "levelLabel": "advanced", "icon": "Boxes" },
-    { "name": "REST API", "category": "Backend", "level": 88, "levelLabel": "expert", "icon": "Waypoints" },
-    { "name": "Node.js", "category": "Backend", "level": 65, "levelLabel": "proficient", "icon": "Hexagon" },
-    { "name": "Python", "category": "Backend", "level": 60, "levelLabel": "proficient", "icon": "Code2" },
-    { "name": "SQL", "category": "Backend", "level": 75, "levelLabel": "advanced", "icon": "Database" },
-    { "name": "JavaFX", "category": "Backend", "level": 55, "levelLabel": "proficient", "icon": "MonitorSmartphone" },
-    { "name": "React", "category": "Frontend", "level": 78, "levelLabel": "advanced", "icon": "Atom" },
-    { "name": "Next.js", "category": "Frontend", "level": 76, "levelLabel": "advanced", "icon": "Triangle" },
-    { "name": "TypeScript", "category": "Frontend", "level": 78, "levelLabel": "advanced", "icon": "FileType2" },
-    { "name": "Tailwind CSS", "category": "Frontend", "level": 80, "levelLabel": "advanced", "icon": "Palette" },
-    { "name": "Docker", "category": "DevOps & Cloud", "level": 80, "levelLabel": "advanced", "icon": "Ship" },
-    { "name": "CI/CD", "category": "DevOps & Cloud", "level": 65, "levelLabel": "proficient", "icon": "Workflow" },
-    { "name": "Cloud", "category": "DevOps & Cloud", "level": 60, "levelLabel": "proficient", "icon": "Cloud" },
-    { "name": "Linux", "category": "DevOps & Cloud", "level": 75, "levelLabel": "advanced", "icon": "TerminalSquare" },
-    { "name": "Git & GitHub", "category": "DevOps & Cloud", "level": 85, "levelLabel": "advanced", "icon": "GitBranch" },
-    { "name": "IoT (MQTT / Kafka)", "category": "Data & IoT", "level": 70, "levelLabel": "proficient", "icon": "Radio" }
+    { "name": "Java", "category": "Backend", "level": 90, "levelLabel": "expert", "icon": "java" },
+    { "name": "Spring / Spring Boot", "category": "Backend", "level": 88, "levelLabel": "expert", "icon": "spring" },
+    { "name": "Microservices", "category": "Backend", "level": 82, "levelLabel": "advanced", "icon": "microservices" },
+    { "name": "REST API", "category": "Backend", "level": 88, "levelLabel": "expert", "icon": "rest-api" },
+    { "name": "Node.js", "category": "Backend", "level": 65, "levelLabel": "proficient", "icon": "nodejs" },
+    { "name": "Python", "category": "Backend", "level": 60, "levelLabel": "proficient", "icon": "python" },
+    { "name": "SQL", "category": "Backend", "level": 75, "levelLabel": "advanced", "icon": "sql" },
+    { "name": "JavaFX", "category": "Backend", "level": 55, "levelLabel": "proficient", "icon": "javafx" },
+    { "name": "React", "category": "Frontend", "level": 78, "levelLabel": "advanced", "icon": "react" },
+    { "name": "Next.js", "category": "Frontend", "level": 76, "levelLabel": "advanced", "icon": "nextjs" },
+    { "name": "TypeScript", "category": "Frontend", "level": 78, "levelLabel": "advanced", "icon": "typescript" },
+    { "name": "Tailwind CSS", "category": "Frontend", "level": 80, "levelLabel": "advanced", "icon": "tailwind" },
+    { "name": "Docker", "category": "DevOps & Cloud", "level": 80, "levelLabel": "advanced", "icon": "docker" },
+    { "name": "CI/CD", "category": "DevOps & Cloud", "level": 65, "levelLabel": "proficient", "icon": "cicd" },
+    { "name": "Cloud", "category": "DevOps & Cloud", "level": 60, "levelLabel": "proficient", "icon": "cloud" },
+    { "name": "Linux", "category": "DevOps & Cloud", "level": 75, "levelLabel": "advanced", "icon": "linux" },
+    { "name": "Git & GitHub", "category": "DevOps & Cloud", "level": 85, "levelLabel": "advanced", "icon": "git" },
+    { "name": "IoT (MQTT / Kafka)", "category": "Data & IoT", "level": 70, "levelLabel": "proficient", "icon": "iot" }
   ]
 }

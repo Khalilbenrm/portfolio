@@ -32,14 +32,7 @@
   "Skills": {
     "eyebrow": "Compétences",
     "title": "Une boîte à outils complète, du backend au produit fini",
-    "description": "Technologies et pratiques utilisées régulièrement, avec un niveau de maîtrise indicatif.",
-    "levels": {
-      "learning": "Apprentissage",
-      "proficient": "Opérationnel",
-      "advanced": "Avancé",
-      "expert": "Expert"
-    },
-    "progressLabel": "Niveau de maîtrise {name} : {level}"
+    "description": "Technologies et pratiques utilisées régulièrement."
   },
   "FeaturedProjects": {
     "eyebrow": "Projets",

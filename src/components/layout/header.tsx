@@ -47,7 +47,7 @@ export function Header({ site }: { site: SiteConfig }) {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
           className="shrink-0 text-base font-bold tracking-tight"
@@ -59,7 +59,7 @@ export function Header({ site }: { site: SiteConfig }) {
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
+        <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.key}
@@ -78,11 +78,11 @@ export function Header({ site }: { site: SiteConfig }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 xl:flex">
             <LanguageSwitcher />
             <ThemeToggle />
           </div>
-          <Button href={site.cvUrl} variant="dark" size="sm" external className="hidden md:inline-flex">
+          <Button href={site.cvUrl} variant="dark" size="sm" external className="hidden lg:inline-flex">
             {tHero("ctaCv")}
             <Download className="h-3.5 w-3.5" />
           </Button>
@@ -90,7 +90,7 @@ export function Header({ site }: { site: SiteConfig }) {
             type="button"
             aria-label={open ? tHeader("closeMenu") : tHeader("openMenu")}
             onClick={() => setOpen((o) => !o)}
-            className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--foreground)] hover:bg-[var(--surface-hover)] md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--foreground)] hover:bg-[var(--surface-hover)] lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -104,7 +104,7 @@ export function Header({ site }: { site: SiteConfig }) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="overflow-hidden border-t border-[var(--border)] bg-[var(--background)] md:hidden"
+            className="overflow-hidden border-t border-[var(--border)] bg-[var(--background)] lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {NAV_ITEMS.map((item) => (

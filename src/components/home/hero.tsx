@@ -68,7 +68,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </div>
 
-        <motion.div variants={item} className="relative -mt-4 h-[24svh] max-w-full sm:-mt-6 sm:h-[42svh]">
+        <motion.div variants={item} className="relative -mt-4 h-[28svh] max-w-full sm:-mt-6 sm:h-[42svh]">
           <div
             className="pointer-events-none absolute inset-x-6 top-6 -z-10 aspect-square rounded-full opacity-80 blur-2xl"
             style={{ background: "var(--surface)" }}

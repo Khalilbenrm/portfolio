@@ -3,10 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useId } from "react";
-import { ArrowRight, ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import type { SiteConfig } from "@/types/site";
 
@@ -22,8 +20,6 @@ const item = {
 
 export function Hero({ site }: { site: SiteConfig }) {
   const t = useTranslations("Hero");
-  const circleId = useId().replace(/[^a-zA-Z0-9]/g, "");
-  const badgeText = `${t("ctaContact")} • ${t("ctaContact")} • `.toUpperCase();
 
   const socials = [
     { href: site.github, icon: FaGithub, label: "GitHub" },
@@ -32,7 +28,7 @@ export function Hero({ site }: { site: SiteConfig }) {
   ];
 
   return (
-    <section className="relative overflow-hidden px-6 pb-12 pt-8 sm:pb-20 sm:pt-24">
+    <section className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center overflow-hidden px-6 pb-12 pt-8 sm:pb-20 sm:pt-24">
       {/* soft background blobs */}
       <div
         className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full opacity-60 blur-3xl"
@@ -72,49 +68,19 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </div>
 
-        <motion.div variants={item} className="relative">
-          <svg
-            className="pointer-events-none absolute -right-10 -top-6 h-44 w-44 text-[var(--accent)] sm:-right-14 sm:h-56 sm:w-56"
-            viewBox="0 0 200 220"
-            fill="none"
-          >
-            <path
-              d="M20,190 C-20,140 30,70 90,55 C150,40 175,10 158,-8"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          <div className="relative h-36 w-32 overflow-hidden rounded-t-full border border-[var(--card-border)] bg-[var(--surface)] sm:h-64 sm:w-52">
-            <Image
-              src={site.photoUrl}
-              alt={t("profilePhoto")}
-              fill
-              priority
-              className="object-cover grayscale"
-            />
-          </div>
-
-          <Link
-            href="/#contact"
-            className="group absolute -right-6 -top-6 flex h-20 w-20 items-center justify-center sm:-right-8 sm:-top-8 sm:h-24 sm:w-24"
-          >
-            <svg
-              viewBox="0 0 100 100"
-              className="absolute inset-0 h-full w-full animate-[spin_16s_linear_infinite] text-[var(--muted-foreground)]"
-            >
-              <defs>
-                <path id={`circle-${circleId}`} d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-              </defs>
-              <text fontSize="7.2" letterSpacing="1.5" fill="currentColor">
-                <textPath href={`#circle-${circleId}`}>{badgeText}</textPath>
-              </text>
-            </svg>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] transition-transform group-hover:scale-110">
-              <ArrowUpRight className="h-4 w-4" />
-            </span>
-          </Link>
+        <motion.div variants={item} className="relative -mt-6 w-80 sm:-mt-10 sm:w-[27rem]">
+          <div
+            className="pointer-events-none absolute inset-x-6 top-6 -z-10 aspect-square rounded-full opacity-80 blur-2xl"
+            style={{ background: "var(--surface)" }}
+          />
+          <Image
+            src="/personal-photo-cutout.png"
+            alt={t("profilePhoto")}
+            width={992}
+            height={1077}
+            priority
+            className="relative h-auto w-full object-contain"
+          />
         </motion.div>
 
         <motion.div variants={item} className="mt-4 sm:mt-8">

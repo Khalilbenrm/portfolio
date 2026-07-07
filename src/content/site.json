@@ -1,23 +1,26 @@
 {
   "name": "Khalil BEN ROMDHANE",
-  "title": "QA Engineer | ISTQB en préparation | Software Engineer",
+  "title": "QA & QC Engineer | ISTQB en préparation | Software Engineer",
   "tagline": {
-    "fr": "Je conçois des systèmes backend distribués et des interfaces soignées — de l'architecture microservices à l'expérience utilisateur finale.",
-    "en": "I design distributed backend systems and polished interfaces — from microservices architecture to the final user experience."
+    "fr": "Ingénieur logiciel en reconversion vers la QA. Ma compréhension du code me permet de concevoir des tests plus pertinents et de dialoguer efficacement avec les développeurs. Automatisation des tests avec Selenium, Postman et JUnit, méthodologies Agile. Certification ISTQB Foundation Level en préparation.",
+    "en": "Software engineer transitioning into QA. My coding background lets me design more relevant tests and collaborate closely with developers. Test automation with Selenium, Postman, and JUnit, Agile methodologies. Currently preparing the ISTQB Foundation Level certification."
   },
   "shortTagline": {
-    "fr": "Software Engineer — Backend, Systèmes distribués & IoT",
-    "en": "Software Engineer — Backend, Distributed Systems & IoT"
+    "fr": "Software Engineer — QA & QC Engineer",
+    "en": "Software Engineer — QA & QC Engineer"
   },
   "location": "France",
   "email": "benrm.khalil@gmail.com",
   "github": "https://github.com/Khalilbenrm",
   "githubUsername": "Khalilbenrm",
   "linkedin": "https://www.linkedin.com/in/khalil-ben-romdhane-3719462b8/",
-  "cvUrl": "/cv-placeholder.pdf",
+  "cvUrl": {
+    "fr": "/cv-fr.pdf",
+    "en": "/cv-en.pdf"
+  },
   "photoUrl": "/personal-photo.png",
   "domain": "https://your-domain.com",
   "_meta": {
-    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. tagline/shortTagline ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
+    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
   }
 }

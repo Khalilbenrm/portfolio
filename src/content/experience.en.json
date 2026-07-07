@@ -1,27 +1,27 @@
 {
   "items": [
     {
-      "id": "qa-reconversion",
-      "title": "Professional Reconversion — QA tester (self-directed)",
+      "id": "qa-specialization",
+      "title": "Software Quality & Testing Specialization (self-directed)",
       "company": null,
       "location": null,
       "period": "June 2026 — Present",
       "current": true,
       "bullets": [
         "Preparing for the ISTQB Foundation Level certification",
-        "Aiming to build test automation skills next (upcoming focus)",
-        "This portfolio as a hands-on project (Next.js, TypeScript, frontend architecture)"
+        "Deepening test automation skills with Selenium, Postman, and JUnit",
+        "This portfolio built as a full engineering project (Next.js, TypeScript, frontend architecture)"
       ]
     },
     {
       "id": "cdi-polydron",
-      "title": "Full-time — Backend Java Engineer — Microservices",
-      "company": "Sodexo (Via Polydron Labs)",
+      "title": "Backend Java Engineer — Microservices",
+      "company": "Sodexo (via Polydron Labs)",
       "location": "Paris, France",
       "period": "January 2025 — June 2026",
       "current": false,
       "bullets": [
-        "Built microservices with Spring Boot in a distributed environment",
+        "Built and maintained Spring Boot microservices in a distributed environment",
         "Optimized REST API performance and improved service resilience",
         "Contributed to backend architecture and distributed systems design"
       ]
@@ -34,9 +34,9 @@
       "period": "April 2024 — December 2024",
       "current": false,
       "bullets": [
-        "Built REST APIs with Spring Boot and PostgreSQL integration",
+        "Designed and built REST APIs with Spring Boot and PostgreSQL integration",
         "Set up CI/CD pipelines to automate deployments",
-        "Improved backend service quality and stability"
+        "Continuously improved backend service quality and stability"
       ]
     },
     {
@@ -48,9 +48,9 @@
       "current": false,
       "bullets": [
         "Migrated a SaaS application from a monolithic to a microservices architecture",
-        "Split the system into independent services with REST APIs (Spring Boot)",
+        "Split the system into independent services exposing REST APIs (Spring Boot)",
         "Set up a distributed architecture with Spring Cloud, RabbitMQ, and an API Gateway",
-        "Collaborated with frontend teams on feature integration"
+        "Worked closely with frontend teams on feature integration"
       ],
       "projectSlug": "project-flow"
     },
@@ -64,8 +64,8 @@
       "bullets": [
         "Built a Java backend for real-time IoT data processing",
         "Implemented an event-driven architecture with Apache Kafka",
-        "Designed REST APIs with Spring Boot and MongoDB storage",
-        "Containerized services and added unit/mock tests (JUnit, Mockito)"
+        "Designed REST APIs with Spring Boot and MongoDB persistence",
+        "Containerized services with Docker and covered them with unit tests (JUnit, Mockito)"
       ],
       "projectSlug": "smart-building-iot"
     }

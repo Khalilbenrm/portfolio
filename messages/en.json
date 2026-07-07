@@ -29,19 +29,20 @@
   },
   "About": {
     "eyebrow": "About",
-    "illustration": "Photo / illustration"
+    "illustration": "Quality & testing"
   },
   "Experience": {
     "eyebrow": "Journey",
     "title": "Professional Experience",
-    "description": "From backend development to a reconversion toward software quality.",
+    "description": "From backend development to focused expertise in software quality and testing.",
     "current": "Ongoing",
     "selfDirected": "Self-directed",
     "viewCaseStudy": "View case study"
   },
   "Education": {
     "eyebrow": "Education",
-    "title": "Academic Background"
+    "title": "Academic Background",
+    "description": "A strong scientific foundation and an engineering degree in software engineering."
   },
   "Skills": {
     "eyebrow": "Skills",

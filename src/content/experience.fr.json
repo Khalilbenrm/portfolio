@@ -1,42 +1,42 @@
 {
   "items": [
     {
-      "id": "qa-reconversion",
-      "title": "Reconversion professionnelle — QA (auto-formation)",
+      "id": "qa-specialization",
+      "title": "Spécialisation Qualité Logicielle & Tests (auto-formation)",
       "company": null,
       "location": null,
       "period": "Juin 2026 — Présent",
       "current": true,
       "bullets": [
         "Préparation de la certification ISTQB Foundation Level",
-        "Montée en compétences visée sur les tests automatisés (prochaine étape)",
-        "Ce portfolio comme projet pratique (Next.js, TypeScript, architecture front)"
+        "Approfondissement de l'automatisation des tests avec Selenium, Postman et JUnit",
+        "Ce portfolio conçu comme un projet d'ingénierie à part entière (Next.js, TypeScript, architecture front)"
       ]
     },
     {
       "id": "cdi-polydron",
-      "title": "CDI — Ingénieur Backend Java — Microservices",
-      "company": "Sodexo (Via Polydron Labs)",
+      "title": "Ingénieur Backend Java — Microservices",
+      "company": "Sodexo (via Polydron Labs)",
       "location": "Paris, France",
       "period": "Janvier 2025 — Juin 2026",
       "current": false,
       "bullets": [
-        "Développement de microservices avec Spring Boot dans un environnement distribué",
-        "Optimisation des performances des APIs REST et amélioration de la résilience des services",
-        "Participation à la conception de l'architecture backend et des systèmes distribués"
+        "Développement et maintenance de microservices Spring Boot au sein d'un environnement distribué",
+        "Optimisation des performances des APIs REST et renforcement de la résilience des services",
+        "Contribution à la conception de l'architecture backend et des systèmes distribués"
       ]
     },
     {
       "id": "pfe-polydron",
-      "title": "Stage PFE — Ingénieur Backend Java",
+      "title": "Stage de fin d'études — Ingénieur Backend Java",
       "company": "Polydron Labs",
       "location": "Paris, France",
       "period": "Avril 2024 — Décembre 2024",
       "current": false,
       "bullets": [
-        "Développement d'APIs REST avec Spring Boot et intégration de PostgreSQL",
-        "Mise en place de pipelines CI/CD pour l'automatisation des déploiements",
-        "Amélioration de la qualité et de la stabilité des services backend"
+        "Conception et développement d'APIs REST avec Spring Boot, intégrées à PostgreSQL",
+        "Mise en place de pipelines CI/CD pour automatiser les déploiements",
+        "Amélioration continue de la qualité et de la stabilité des services backend"
       ]
     },
     {
@@ -48,9 +48,9 @@
       "current": false,
       "bullets": [
         "Migration d'une application SaaS d'une architecture monolithique vers une architecture microservices",
-        "Découpage du système en services indépendants avec des APIs REST (Spring Boot)",
+        "Découpage du système en services indépendants exposant des APIs REST (Spring Boot)",
         "Mise en place d'une architecture distribuée avec Spring Cloud, RabbitMQ et une API Gateway",
-        "Collaboration avec les équipes frontend pour l'intégration des fonctionnalités"
+        "Collaboration étroite avec les équipes frontend pour l'intégration des fonctionnalités"
       ],
       "projectSlug": "project-flow"
     },
@@ -64,8 +64,8 @@
       "bullets": [
         "Développement d'un backend Java pour le traitement de données IoT en temps réel",
         "Mise en place d'une architecture orientée événements avec Apache Kafka",
-        "Conception d'APIs REST avec Spring Boot et stockage MongoDB",
-        "Conteneurisation avec Docker et tests unitaires/mocks (JUnit, Mockito)"
+        "Conception d'APIs REST avec Spring Boot et persistance des données avec MongoDB",
+        "Conteneurisation des services avec Docker et couverture par tests unitaires (JUnit, Mockito)"
       ],
       "projectSlug": "smart-building-iot"
     }

@@ -13,7 +13,7 @@ export interface RawSiteConfig {
   github: string;
   githubUsername: string;
   linkedin: string;
-  cvUrl: string;
+  cvUrl: LocalizedString;
   photoUrl: string;
   domain: string;
 }

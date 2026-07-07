@@ -36,7 +36,7 @@ export default async function Home({
     <>
       <Hero site={site} />
       <Separator />
-      <About headline={about.headline} focus={about.focus} content={about.content} />
+      <About headline={about.headline} focus={about.focus} content={about.content} photoUrl={site.photoUrl} />
       <Separator />
       <Experience items={experience} />
       <Separator />

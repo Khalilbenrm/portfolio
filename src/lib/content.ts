@@ -13,11 +13,12 @@ const PROJECTS_DIR = path.join(CONTENT_DIR, "projects");
 
 export function getSiteConfig(locale: Locale): SiteConfig {
   const raw = siteJson as RawSiteConfig & { _meta?: unknown };
-  const { tagline, shortTagline, ...rest } = raw;
+  const { tagline, shortTagline, cvUrl, ...rest } = raw;
   return {
     ...rest,
     tagline: tagline[locale],
     shortTagline: shortTagline[locale],
+    cvUrl: cvUrl[locale],
   };
 }
 

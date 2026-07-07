@@ -1,14 +1,16 @@
 ---
-headline: "Software Engineer passionné par les systèmes backend robustes"
-focus: "Architecture microservices, systèmes distribués & IoT"
-yearsNote: "Parcours en développement logiciel — à préciser"
-note: "Contenu éditable. Ce texte est un paragraphe de présentation professionnelle plausible déduit du profil technique observé (dépôts backend Java/Spring/microservices + IoT) ; les détails biographiques (parcours, formation, dates, expériences) restent à préciser par toi-même."
+headline: "Ingénieur logiciel passionné par la qualité et les tests"
+focus: "Automatisation des tests, qualité logicielle & méthodologies Agile"
+yearsNote: "Formation en ingénierie logicielle, engagement constant pour l'excellence qualité"
+note: "Contenu éditable."
 ---
 
-Je suis un ingénieur logiciel concentré sur la conception de systèmes backend fiables et évolutifs. Mon travail récent explore deux axes complémentaires : la décomposition d'applications monolithiques en microservices Spring Boot orchestrés (découverte de services, passerelle API, messagerie asynchrone, observabilité), et l'ingénierie de pipelines de données temps réel pour l'IoT, du capteur jusqu'à la persistance, en passant par MQTT et Kafka.
+Je suis un ingénieur logiciel passionné par la qualité logicielle et l'art de construire des produits fiables. Convaincu qu'un logiciel robuste se construit autant par du code propre que par une stratégie de test rigoureuse, je place la qualité au cœur de chaque projet sur lequel je travaille.
 
-J'accorde une attention particulière à la clarté architecturale : séparation des responsabilités par couche, patterns bien identifiés (Repository, DTO, Observer, Circuit Breaker), et une exigence de sécurité et d'observabilité pensées dès la conception plutôt qu'ajoutées après coup.
+J'ai développé une solide expertise dans l'automatisation des tests avec Selenium, Postman et JUnit, couvrant aussi bien les tests fonctionnels que les tests d'API et d'intégration continue. Ma compréhension du code me permet de concevoir des stratégies de test pertinentes, d'anticiper les zones de risque et de dialoguer efficacement avec les équipes de développement.
 
-Au-delà du backend, je conçois aussi des interfaces modernes avec React, Next.js et TypeScript — ce portfolio en est un exemple direct, pensé et structuré comme un vrai projet logiciel : contenu séparé du code, composants réutilisables et architecture évolutive.
+J'évolue naturellement dans des environnements Agile, où je collabore étroitement avec développeurs et product owners pour intégrer la qualité dès les premières étapes du cycle de développement, plutôt que de la traiter comme une simple vérification finale.
 
-Je suis actuellement ouvert à des opportunités où je peux contribuer à des systèmes exigeants, que ce soit côté plateforme, infrastructure applicative ou produit.
+Actuellement en préparation de la certification ISTQB Foundation Level, je consolide mes bases théoriques pour renforcer une pratique déjà solide du test logiciel.
+
+Je suis à la recherche d'un poste d'ingénieur QA au sein d'une équipe dynamique, où je pourrai mettre mon regard de développeur au service de la qualité produit.

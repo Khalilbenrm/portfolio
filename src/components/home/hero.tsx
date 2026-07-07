@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import type { SiteConfig } from "@/types/site";
@@ -25,6 +25,7 @@ export function Hero({ site }: { site: SiteConfig }) {
     { href: site.github, icon: FaGithub, label: "GitHub" },
     { href: site.linkedin, icon: FaLinkedin, label: "LinkedIn" },
     { href: `mailto:${site.email}`, icon: Mail, label: "Email" },
+    { href: null, icon: MapPin, label: site.location },
   ];
 
   return (
@@ -53,19 +54,26 @@ export function Hero({ site }: { site: SiteConfig }) {
         animate="show"
         className="relative mx-auto flex max-w-3xl flex-col items-center text-center"
       >
-        <div className="absolute left-0 top-20 hidden flex-col items-center gap-5 lg:flex">
-          {socials.map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              aria-label={label}
-              className="text-[var(--muted-foreground)] transition-colors hover:text-[var(--accent)]"
-            >
-              <Icon className="h-5 w-5" />
-            </a>
-          ))}
+        <div className="absolute left-0 top-20 hidden flex-col items-start gap-5 lg:flex">
+          {socials.map(({ href, icon: Icon, label }) =>
+            href ? (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-2 text-[var(--muted-foreground)] transition-colors hover:text-[var(--accent)]"
+              >
+                <Icon className="h-5 w-5" />
+                <span className="text-sm font-medium">{label}</span>
+              </a>
+            ) : (
+              <div key={label} className="flex items-center gap-2 text-[var(--muted-foreground)]">
+                <Icon className="h-5 w-5" />
+                <span className="text-sm font-medium">{label}</span>
+              </div>
+            )
+          )}
         </div>
 
         <motion.div variants={item} className="relative -mt-4 h-[28svh] max-w-full sm:-mt-6 sm:h-[42svh]">
@@ -92,7 +100,7 @@ export function Hero({ site }: { site: SiteConfig }) {
 
         <motion.p
           variants={item}
-          className="mt-3 max-w-xl text-balance text-base leading-relaxed text-[var(--muted-foreground)] sm:mt-4 sm:text-lg"
+          className="mt-3 max-w-2xl text-balance text-base leading-relaxed text-[var(--muted-foreground)] sm:mt-4 sm:text-lg"
         >
           {site.tagline}
         </motion.p>

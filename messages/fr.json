@@ -29,19 +29,20 @@
   },
   "About": {
     "eyebrow": "À propos",
-    "illustration": "Photo / illustration"
+    "illustration": "Qualité & tests"
   },
   "Experience": {
     "eyebrow": "Parcours",
     "title": "Expérience professionnelle",
-    "description": "Du développement backend à la reconversion vers la qualité logicielle.",
+    "description": "Du développement backend à une expertise ciblée en qualité logicielle et en tests.",
     "current": "En cours",
     "selfDirected": "Auto-formation",
     "viewCaseStudy": "Voir l'étude de cas"
   },
   "Education": {
     "eyebrow": "Formation",
-    "title": "Formation académique"
+    "title": "Formation académique",
+    "description": "Un socle scientifique et une formation d'ingénieur en génie logiciel."
   },
   "Skills": {
     "eyebrow": "Compétences",

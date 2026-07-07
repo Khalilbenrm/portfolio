@@ -1,17 +1,19 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Markdown } from "@/components/common/markdown";
-import { Placeholder } from "@/components/common/placeholder";
 
 export function About({
   headline,
   focus,
   content,
+  photoUrl,
 }: {
   headline: string;
   focus: string;
   content: string;
+  photoUrl: string;
 }) {
   const t = useTranslations("About");
 
@@ -22,7 +24,15 @@ export function About({
         {/* Not wrapped in Reveal: likely LCP candidate, see case-study/about.tsx. */}
         <Markdown content={content} className="text-base" />
         <Reveal delay={0.1}>
-          <Placeholder label={t("illustration")} icon="Aperture" className="lg:sticky lg:top-24" />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--surface)] lg:sticky lg:top-24">
+            <Image
+              src={photoUrl}
+              alt={t("illustration")}
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
       </div>
     </section>

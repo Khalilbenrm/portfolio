@@ -34,6 +34,7 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const site = getSiteConfig(locale as Locale);
+  const tNav = await getTranslations({ locale, namespace: "Nav" });
 
   const languages: Record<string, string> = {};
   for (const l of routing.locales) {
@@ -43,8 +44,8 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(site.domain),
     title: {
-      default: `${site.shortName} | ${site.title}`,
-      template: `%s | ${site.shortName}`,
+      default: `${site.shortName} | ${tNav("home")}`,
+      template: `${site.shortName} | %s`,
     },
     description: site.tagline,
     keywords: [

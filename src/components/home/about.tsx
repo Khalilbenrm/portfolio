@@ -3,15 +3,18 @@ import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Markdown } from "@/components/common/markdown";
 import { AboutTerminal } from "./about-terminal";
+import type { QaTerminal } from "@/types/site";
 
 export function About({
   headline,
   focus,
   content,
+  qaTerminal,
 }: {
   headline: string;
   focus: string;
   content: string;
+  qaTerminal: QaTerminal;
 }) {
   const t = useTranslations("About");
 
@@ -22,7 +25,7 @@ export function About({
         {/* Not wrapped in Reveal: likely LCP candidate, see case-study/about.tsx. */}
         <Markdown content={content} className="text-base" />
         <Reveal delay={0.1}>
-          <AboutTerminal />
+          <AboutTerminal terminal={qaTerminal} />
         </Reveal>
       </div>
     </section>

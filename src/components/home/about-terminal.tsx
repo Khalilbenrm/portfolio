@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Check, Loader2 } from "lucide-react";
+import type { QaTerminal } from "@/types/site";
 
 const container = {
   hidden: {},
@@ -14,16 +14,7 @@ const line = {
   show: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
 
-export function AboutTerminal() {
-  const t = useTranslations("About");
-
-  const lines = [
-    { text: t("terminalLine1"), status: "pass" as const },
-    { text: t("terminalLine2"), status: "pass" as const },
-    { text: t("terminalLine3"), status: "pass" as const },
-    { text: t("terminalLine4"), status: "pending" as const },
-  ];
-
+export function AboutTerminal({ terminal }: { terminal: QaTerminal }) {
   return (
     <motion.div
       initial="hidden"
@@ -36,11 +27,11 @@ export function AboutTerminal() {
         <span className="h-2.5 w-2.5 rounded-full bg-[#f4756c]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#f5bf4f]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#59c766]" />
-        <span className="ml-2 truncate text-xs text-[var(--muted-foreground)]">{t("terminalTitle")}</span>
+        <span className="ml-2 truncate text-xs text-[var(--muted-foreground)]">{terminal.title}</span>
       </div>
 
       <div className="flex flex-col gap-3.5 p-6 font-mono text-sm">
-        {lines.map((l) => (
+        {terminal.lines.map((l) => (
           <motion.div key={l.text} variants={line} className="flex items-center gap-3">
             {l.status === "pass" ? (
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--accent)]">
@@ -61,7 +52,7 @@ export function AboutTerminal() {
           variants={line}
           className="mt-2 border-t border-[var(--card-border)] pt-3 text-xs text-[var(--muted-foreground)]"
         >
-          {t("terminalSummary")}
+          {terminal.summary}
         </motion.div>
       </div>
     </motion.div>

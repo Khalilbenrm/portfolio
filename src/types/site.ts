@@ -3,6 +3,26 @@ export interface LocalizedString {
   en: string;
 }
 
+export interface QaTerminalLine {
+  text: string;
+  status: "pass" | "pending";
+}
+
+export interface RawQaTerminal {
+  title: string;
+  lines: {
+    fr: QaTerminalLine[];
+    en: QaTerminalLine[];
+  };
+  summary: LocalizedString;
+}
+
+export interface QaTerminal {
+  title: string;
+  lines: QaTerminalLine[];
+  summary: string;
+}
+
 export interface RawSiteConfig {
   name: string;
   shortName: string;
@@ -19,6 +39,7 @@ export interface RawSiteConfig {
   cvUrl: LocalizedString;
   photoUrl: string;
   domain: string;
+  qaTerminal: RawQaTerminal;
 }
 
 export interface SiteConfig {
@@ -37,6 +58,7 @@ export interface SiteConfig {
   cvUrl: string;
   photoUrl: string;
   domain: string;
+  qaTerminal: QaTerminal;
 }
 
 export type SkillLevel = "learning" | "proficient" | "advanced" | "expert";

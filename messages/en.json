@@ -29,13 +29,7 @@
     "profilePhoto": "Profile photo"
   },
   "About": {
-    "eyebrow": "About",
-    "terminalTitle": "test-suite.spec",
-    "terminalLine1": "Selenium — end-to-end flows",
-    "terminalLine2": "Postman — API contracts",
-    "terminalLine3": "JUnit — business logic",
-    "terminalLine4": "ISTQB Foundation — certification",
-    "terminalSummary": "3 tests passed · 1 in progress"
+    "eyebrow": "About"
   },
   "Experience": {
     "eyebrow": "Journey",

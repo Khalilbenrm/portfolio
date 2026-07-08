@@ -38,7 +38,7 @@ export default async function Home({
       <SectionTitleSync siteName={site.shortName} />
       <Hero site={site} />
       <Separator />
-      <About headline={about.headline} focus={about.focus} content={about.content} />
+      <About headline={about.headline} focus={about.focus} content={about.content} qaTerminal={site.qaTerminal} />
       <Separator />
       <Experience items={experience} />
       <Separator />

@@ -39,13 +39,9 @@ export interface SiteConfig {
   domain: string;
 }
 
-export type SkillLevel = "learning" | "proficient" | "advanced" | "expert";
-
 export interface Skill {
   name: string;
   category: string;
-  level: number; // 0-100
-  levelLabel: SkillLevel;
   icon: string;
 }
 
@@ -56,4 +52,6 @@ export interface Certification {
   issuer?: string;
   status: CertificationStatus;
   icon: string;
+  logo?: string;
+  url?: string;
 }

@@ -11,6 +11,6 @@ J'ai développé une solide expertise dans l'automatisation des tests avec Selen
 
 J'évolue naturellement dans des environnements Agile, où je collabore étroitement avec développeurs et product owners pour intégrer la qualité dès les premières étapes du cycle de développement, plutôt que de la traiter comme une simple vérification finale.
 
-Actuellement en préparation de la certification ISTQB Foundation Level, je consolide mes bases théoriques pour renforcer une pratique déjà solide du test logiciel.
+Certifié ISTQB Foundation Level, j'ai consolidé mes bases théoriques pour renforcer une pratique déjà solide du test logiciel.
 
 Je suis à la recherche d'un poste d'ingénieur QA au sein d'une équipe dynamique, où je pourrai mettre mon regard de développeur au service de la qualité produit.

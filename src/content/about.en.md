@@ -11,6 +11,6 @@ I've built solid expertise in test automation with Selenium, Postman, and JUnit,
 
 I thrive in Agile environments, working closely with developers and product owners to bake quality into the process from the earliest stages of development, rather than treating it as a final checkbox.
 
-I'm currently preparing for the ISTQB Foundation Level certification, strengthening the theoretical foundations behind a practice that's already solid.
+ISTQB Foundation Level certified, I've consolidated the theoretical foundations behind a practice that's already solid.
 
 I'm looking for a QA engineer role within a dynamic team, where I can put my developer's eye to work in service of product quality.

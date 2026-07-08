@@ -8,14 +8,15 @@
       "period": "June 2026 — Present",
       "current": true,
       "bullets": [
-        "Preparing for the ISTQB Foundation Level certification",
+        "ISTQB Foundation Level certification obtained",
         "Deepening test automation skills with Selenium, Postman, and JUnit",
-        "This portfolio built as a full engineering project (Next.js, TypeScript, frontend architecture)"
+        "Building structured test strategies (test plans, test cases, exploratory testing)",
+        "Applying these skills hands-on across personal projects (API testing, automation)"
       ]
     },
     {
       "id": "cdi-polydron",
-      "title": "Backend Java Engineer — Microservices",
+      "title": "Full-time — Backend Java Engineer ",
       "company": "Sodexo (via Polydron Labs)",
       "location": "Paris, France",
       "period": "January 2025 — June 2026",

@@ -8,14 +8,15 @@
       "period": "Juin 2026 — Présent",
       "current": true,
       "bullets": [
-        "Préparation de la certification ISTQB Foundation Level",
+        "Certification ISTQB Foundation Level obtenue",
         "Approfondissement de l'automatisation des tests avec Selenium, Postman et JUnit",
-        "Ce portfolio conçu comme un projet d'ingénierie à part entière (Next.js, TypeScript, architecture front)"
+        "Mise en place de stratégies de test structurées (plans de test, cas de test, tests exploratoires)",
+        "Application pratique de ces compétences sur des projets personnels (tests API, automatisation)"
       ]
     },
     {
       "id": "cdi-polydron",
-      "title": "Ingénieur Backend Java — Microservices",
+      "title": "CDI — Ingénieur Backend Java ",
       "company": "Sodexo (via Polydron Labs)",
       "location": "Paris, France",
       "period": "Janvier 2025 — Juin 2026",

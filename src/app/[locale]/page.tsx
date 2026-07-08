@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import {
   getSiteConfig,
   getSkills,
+  getCertifications,
   getFeaturedProjects,
   getAboutContent,
   getExperience,
@@ -28,6 +29,7 @@ export default async function Home({
 
   const site = getSiteConfig(locale);
   const skills = getSkills();
+  const certifications = getCertifications();
   const projects = getFeaturedProjects(locale);
   const about = getAboutContent(locale);
   const experience = getExperience(locale);
@@ -38,13 +40,13 @@ export default async function Home({
       <SectionTitleSync siteName={site.shortName} />
       <Hero site={site} />
       <Separator />
-      <About headline={about.headline} focus={about.focus} content={about.content} qaTerminal={site.qaTerminal} />
+      <About headline={about.headline} focus={about.focus} content={about.content} />
       <Separator />
       <Experience items={experience} />
       <Separator />
       <Education items={education} />
       <Separator />
-      <Skills skills={skills} />
+      <Skills skills={skills} certifications={certifications} />
       <Separator />
       <FeaturedProjects projects={projects} />
       <Separator />

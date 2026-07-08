@@ -1,8 +1,16 @@
 {
   "_meta": {
-    "note": "Niveaux (0-100) à ajuster librement — estimés à partir de la profondeur d'usage observée dans project-flow (Java/Spring/Microservices/Docker/REST) et smart-building-iot-java (IoT/MQTT/Kafka), complétés par des niveaux par défaut raisonnables pour les compétences non démontrées dans ces deux dépôts (JavaFX, Python, Node.js, Cloud...). Le niveau n'est plus affiché visuellement, il sert uniquement à trier chaque catégorie (du plus maîtrisé au moins maîtrisé)."
+    "note": "Niveaux (0-100) à ajuster librement — estimés à partir de la profondeur d'usage observée dans project-flow (Java/Spring/Microservices/Docker/REST) et smart-building-iot-java (IoT/MQTT/Kafka), complétés par des niveaux par défaut raisonnables pour les compétences non démontrées dans ces deux dépôts (JavaFX, Python, Node.js, Cloud...). Le niveau n'est plus affiché visuellement, il sert uniquement à trier chaque catégorie (du plus maîtrisé au moins maîtrisé). L'ordre des catégories suit l'ordre de première apparition dans le tableau — 'QA & Tests' est placé en premier intentionnellement. 'certifications' alimente le bloc certifications affiché sous les compétences : status = 'in-progress' ou 'obtained', icon = nom d'icône Lucide (PascalCase)."
   },
   "skills": [
+    { "name": "Selenium", "category": "QA & Tests", "level": 78, "levelLabel": "advanced", "icon": "selenium" },
+    { "name": "Playwright", "category": "QA & Tests", "level": 70, "levelLabel": "proficient", "icon": "playwright" },
+    { "name": "Postman", "category": "QA & Tests", "level": 82, "levelLabel": "advanced", "icon": "postman" },
+    { "name": "JUnit", "category": "QA & Tests", "level": 85, "levelLabel": "advanced", "icon": "junit" },
+    { "name": "Mockito", "category": "QA & Tests", "level": 78, "levelLabel": "advanced", "icon": "mockito" },
+    { "name": "Tests manuels & exploratoires", "category": "QA & Tests", "level": 75, "levelLabel": "advanced", "icon": "bug" },
+    { "name": "Conception de cas de test (ISTQB)", "category": "QA & Tests", "level": 68, "levelLabel": "proficient", "icon": "test-design" },
+    { "name": "Méthodologies Agile", "category": "QA & Tests", "level": 80, "levelLabel": "advanced", "icon": "agile" },
     { "name": "Java", "category": "Backend", "level": 90, "levelLabel": "expert", "icon": "java" },
     { "name": "Spring / Spring Boot", "category": "Backend", "level": 88, "levelLabel": "expert", "icon": "spring" },
     { "name": "Microservices", "category": "Backend", "level": 82, "levelLabel": "advanced", "icon": "microservices" },
@@ -21,5 +29,13 @@
     { "name": "Linux", "category": "DevOps & Cloud", "level": 75, "levelLabel": "advanced", "icon": "linux" },
     { "name": "Git & GitHub", "category": "DevOps & Cloud", "level": 85, "levelLabel": "advanced", "icon": "git" },
     { "name": "IoT (MQTT / Kafka)", "category": "Data & IoT", "level": 70, "levelLabel": "proficient", "icon": "iot" }
+  ],
+  "certifications": [
+    {
+      "name": "ISTQB Foundation Level",
+      "issuer": "ISTQB",
+      "status": "in-progress",
+      "icon": "Award"
+    }
   ]
 }

@@ -29,7 +29,10 @@
     "profilePhoto": "Photo de profil"
   },
   "About": {
-    "eyebrow": "À propos"
+    "eyebrow": "À propos",
+    "bugHuntTitle": "Chasse aux bugs",
+    "bugHuntCounterLabel": "bugs traqués et corrigés",
+    "bugHuntTagline": "Un bug trouvé en test vaut mieux qu'un bug trouvé en prod."
   },
   "Experience": {
     "eyebrow": "Parcours",
@@ -47,7 +50,10 @@
   "Skills": {
     "eyebrow": "Compétences",
     "title": "Une boîte à outils complète, du backend au produit fini",
-    "description": "Technologies et pratiques utilisées régulièrement."
+    "description": "Technologies et pratiques utilisées régulièrement.",
+    "certifications": "Certifications",
+    "obtained": "Obtenue",
+    "inProgress": "En cours"
   },
   "FeaturedProjects": {
     "eyebrow": "Projets",

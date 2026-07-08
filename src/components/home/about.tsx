@@ -2,30 +2,31 @@ import { useTranslations } from "next-intl";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { Markdown } from "@/components/common/markdown";
-import { AboutTerminal } from "./about-terminal";
-import type { QaTerminal } from "@/types/site";
+import { AboutBugHunt } from "./about-bug-hunt";
 
 export function About({
   headline,
   focus,
   content,
-  qaTerminal,
 }: {
   headline: string;
   focus: string;
   content: string;
-  qaTerminal: QaTerminal;
 }) {
   const t = useTranslations("About");
 
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
       <SectionHeading eyebrow={t("eyebrow")} title={headline} description={focus} />
-      <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+      <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
         {/* Not wrapped in Reveal: likely LCP candidate, see case-study/about.tsx. */}
         <Markdown content={content} className="text-base" />
         <Reveal delay={0.1}>
-          <AboutTerminal terminal={qaTerminal} />
+          <AboutBugHunt
+            title={t("bugHuntTitle")}
+            counterLabel={t("bugHuntCounterLabel")}
+            tagline={t("bugHuntTagline")}
+          />
         </Reveal>
       </div>
     </section>

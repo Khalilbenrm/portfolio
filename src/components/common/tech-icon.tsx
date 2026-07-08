@@ -11,8 +11,11 @@ import {
   SiLinux,
   SiGit,
   SiApachekafka,
+  SiSelenium,
+  SiPostman,
+  SiJunit5,
 } from "react-icons/si";
-import { Boxes, Waypoints, Database, MonitorSmartphone, Workflow, Cloud } from "lucide-react";
+import { Boxes, Waypoints, Database, MonitorSmartphone, Workflow, Cloud, Bug, ClipboardCheck, FlaskConical, Repeat, Drama } from "lucide-react";
 
 const TECH_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   java: FaJava,
@@ -33,6 +36,14 @@ const TECH_ICONS: Record<string, React.ComponentType<{ className?: string }>> = 
   linux: SiLinux,
   git: SiGit,
   iot: SiApachekafka,
+  selenium: SiSelenium,
+  postman: SiPostman,
+  junit: SiJunit5,
+  mockito: FlaskConical,
+  bug: Bug,
+  "test-design": ClipboardCheck,
+  agile: Repeat,
+  playwright: Drama,
 };
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {

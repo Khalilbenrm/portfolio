@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import siteJson from "@/content/site.json";
 import skillsJson from "@/content/skills.json";
 import type { Locale } from "@/i18n/routing";
-import type { RawSiteConfig, SiteConfig, Skill } from "@/types/site";
+import type { RawSiteConfig, SiteConfig, Skill, Certification } from "@/types/site";
 import type { InProgressProject, Project, ProjectFrontmatter } from "@/types/project";
 import type { EducationEntry, ExperienceEntry } from "@/types/experience";
 
@@ -13,22 +13,21 @@ const PROJECTS_DIR = path.join(CONTENT_DIR, "projects");
 
 export function getSiteConfig(locale: Locale): SiteConfig {
   const raw = siteJson as RawSiteConfig & { _meta?: unknown };
-  const { tagline, shortTagline, cvUrl, qaTerminal, ...rest } = raw;
+  const { tagline, shortTagline, cvUrl, ...rest } = raw;
   return {
     ...rest,
     tagline: tagline[locale],
     shortTagline: shortTagline[locale],
     cvUrl: cvUrl[locale],
-    qaTerminal: {
-      title: qaTerminal.title,
-      lines: qaTerminal.lines[locale],
-      summary: qaTerminal.summary[locale],
-    },
   };
 }
 
 export function getSkills(): Skill[] {
   return (skillsJson as { skills: Skill[] }).skills;
+}
+
+export function getCertifications(): Certification[] {
+  return (skillsJson as { certifications: Certification[] }).certifications;
 }
 
 export function getInProgressProjects(locale: Locale): InProgressProject[] {

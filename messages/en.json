@@ -29,7 +29,10 @@
     "profilePhoto": "Profile photo"
   },
   "About": {
-    "eyebrow": "About"
+    "eyebrow": "About",
+    "bugHuntTitle": "Bug Hunt",
+    "bugHuntCounterLabel": "bugs tracked & squashed",
+    "bugHuntTagline": "A bug found in testing is a bug that never reaches production."
   },
   "Experience": {
     "eyebrow": "Journey",
@@ -47,7 +50,10 @@
   "Skills": {
     "eyebrow": "Skills",
     "title": "A complete toolkit, from backend to finished product",
-    "description": "Technologies and practices used regularly."
+    "description": "Technologies and practices used regularly.",
+    "certifications": "Certifications",
+    "obtained": "Obtained",
+    "inProgress": "In progress"
   },
   "FeaturedProjects": {
     "eyebrow": "Projects",

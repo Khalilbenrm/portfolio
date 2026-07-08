@@ -23,28 +23,7 @@
   },
   "photoUrl": "/personal-photo.png",
   "domain": "https://your-domain.com",
-  "qaTerminal": {
-    "title": "test-suite.spec",
-    "lines": {
-      "fr": [
-        { "text": "Selenium — parcours end-to-end", "status": "pass" },
-        { "text": "Postman — contrats d'API", "status": "pass" },
-        { "text": "JUnit — logique métier", "status": "pass" },
-        { "text": "ISTQB Foundation — certification", "status": "pending" }
-      ],
-      "en": [
-        { "text": "Selenium — end-to-end flows", "status": "pass" },
-        { "text": "Postman — API contracts", "status": "pass" },
-        { "text": "JUnit — business logic", "status": "pass" },
-        { "text": "ISTQB Foundation — certification", "status": "pending" }
-      ]
-    },
-    "summary": {
-      "fr": "3 tests réussis · 1 en cours",
-      "en": "3 tests passed · 1 in progress"
-    }
-  },
   "_meta": {
-    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. phone (lien tel:) et whatsapp (lien wa.me, chiffres uniquement extraits) sont deux numéros distincts et indépendants — whatsapp est encore un placeholder à remplacer. shortName est une version courte de name utilisée uniquement pour le titre d'onglet (metadata title + titre dynamique par section) ; name reste utilisé pour le Hero et le footer. qaTerminal alimente l'animation terminal de la section About : 'lines' a une variante par langue (fr/en), chaque ligne a un texte ET un statut ('pass' ou 'pending') modifiables directement ici sans toucher au code — dès que l'ISTQB est obtenu, passer son status à 'pass'. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici."
+    "note": "Fichier de configuration central, partagé entre les deux langues. linkedin='#' et domain sont des placeholders à remplacer avant mise en production. phone (lien tel:) et whatsapp (lien wa.me, chiffres uniquement extraits) sont deux numéros distincts et indépendants — whatsapp est encore un placeholder à remplacer. shortName est une version courte de name utilisée uniquement pour le titre d'onglet (metadata title + titre dynamique par section) ; name reste utilisé pour le Hero et le footer. tagline/shortTagline/cvUrl ont une variante par langue (fr/en) ; les autres champs sont partagés. Le menu de navigation est traduit dans messages/fr.json et messages/en.json (namespace 'Nav'), pas ici. Le widget 'chasse aux bugs' de la section About est configuré via messages/fr.json et messages/en.json (namespace 'About')."
   }
 }

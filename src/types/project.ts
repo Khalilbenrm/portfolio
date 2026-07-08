@@ -5,58 +5,19 @@ export interface TechStackCategory {
   items: string[];
 }
 
-export interface ProjectFeature {
+export type ArchitectureFlowKind = "client" | "gateway" | "service" | "data" | "observability";
+
+export interface ArchitectureFlowNode {
   icon: string;
-  title: string;
-  description: string;
+  label: string;
+  specs?: string[];
 }
 
-export interface ArchitectureLayer {
-  name: string;
-  responsibility: string;
-}
-
-export interface DesignPattern {
-  name: string;
-  description: string;
-}
-
-export interface SolidPrinciple {
-  principle: string;
-  application: string;
-}
-
-export interface MermaidDiagram {
-  title: string;
-  description?: string;
-  diagram: string;
-}
-
-export interface StructureNote {
-  path: string;
-  description: string;
-}
-
-export interface WorkflowStep {
-  step: string;
-  description: string;
-}
-
-export interface Challenge {
-  problem: string;
-  solution: string;
-}
-
-export interface Optimizations {
-  performance: string[];
-  security: string[];
-  maintainability: string[];
-  scalability: string[];
-  quality: string[];
-}
-
-export interface GalleryItem {
-  caption: string;
+export interface ArchitectureFlowColumn {
+  label: string;
+  kind: ArchitectureFlowKind;
+  edgeLabel?: string;
+  nodes: ArchitectureFlowNode[];
 }
 
 export interface ProjectFrontmatter {
@@ -68,26 +29,9 @@ export interface ProjectFrontmatter {
   featured: boolean;
   github: string;
   demo?: string;
-  cover: string;
   techStack: TechStackCategory[];
-  features: ProjectFeature[];
-  architecture: {
-    overview: string;
-    layers: ArchitectureLayer[];
-    patterns: DesignPattern[];
-    solid: SolidPrinciple[];
-    diagrams: MermaidDiagram[];
-  };
-  structure: {
-    tree: string;
-    notes: StructureNote[];
-  };
-  workflow: WorkflowStep[];
-  challenges: Challenge[];
-  optimizations: Optimizations;
-  gallery: GalleryItem[];
-  learnings: string[];
-  caveats?: string[];
+  architectureFlow: ArchitectureFlowColumn[];
+  architectureSummary: string[];
 }
 
 export interface Project extends ProjectFrontmatter {

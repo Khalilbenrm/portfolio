@@ -114,56 +114,13 @@
       "eyebrow": "About",
       "title": "Context, problem & solution"
     },
-    "features": {
-      "eyebrow": "Features",
-      "title": "What the system actually does"
+    "architecture": {
+      "eyebrow": "Architecture",
+      "title": "How the system is built"
     },
     "techStack": {
       "eyebrow": "Tech stack",
       "title": "Technologies used"
-    },
-    "architecture": {
-      "eyebrow": "Software architecture",
-      "title": "How the system is built",
-      "layersTitle": "Application layers",
-      "patternsTitle": "Design patterns",
-      "solidTitle": "SOLID principles"
-    },
-    "structure": {
-      "eyebrow": "Project structure",
-      "title": "Code organization",
-      "folderRolesTitle": "Role of key folders"
-    },
-    "workflow": {
-      "eyebrow": "Workflow",
-      "title": "Request lifecycle"
-    },
-    "challenges": {
-      "eyebrow": "Technical challenges",
-      "title": "Problems encountered & solutions applied"
-    },
-    "optimizations": {
-      "eyebrow": "Optimizations",
-      "title": "Engineering decisions",
-      "performance": "Performance",
-      "security": "Security",
-      "maintainability": "Maintainability",
-      "scalability": "Scalability",
-      "quality": "Code quality"
-    },
-    "gallery": {
-      "eyebrow": "Gallery",
-      "title": "Visual preview",
-      "description": "Screenshots coming soon — the placeholders below are ready to receive the real visuals."
-    },
-    "learnings": {
-      "eyebrow": "What I learned",
-      "title": "Skills gained"
-    },
-    "caveats": {
-      "eyebrow": "Known limitations",
-      "title": "Current state & areas for improvement",
-      "description": "An honest code review includes what isn't done yet — here are the points identified directly in the repository."
     },
     "cta": {
       "title": "Want to know more about {name}?",
@@ -171,8 +128,5 @@
       "exploreCode": "Explore the code",
       "otherProjects": "Other projects"
     }
-  },
-  "Mermaid": {
-    "renderError": "The diagram could not be rendered."
   }
 }

@@ -114,56 +114,13 @@
       "eyebrow": "À propos",
       "title": "Contexte, problème & solution"
     },
-    "features": {
-      "eyebrow": "Fonctionnalités",
-      "title": "Ce que le système fait concrètement"
+    "architecture": {
+      "eyebrow": "Architecture",
+      "title": "Comment le système est construit"
     },
     "techStack": {
       "eyebrow": "Stack technique",
       "title": "Technologies utilisées"
-    },
-    "architecture": {
-      "eyebrow": "Architecture logicielle",
-      "title": "Comment le système est construit",
-      "layersTitle": "Couches applicatives",
-      "patternsTitle": "Design patterns",
-      "solidTitle": "Principes SOLID"
-    },
-    "structure": {
-      "eyebrow": "Structure du projet",
-      "title": "Organisation du code",
-      "folderRolesTitle": "Rôle des dossiers clés"
-    },
-    "workflow": {
-      "eyebrow": "Workflow",
-      "title": "Parcours d'une requête"
-    },
-    "challenges": {
-      "eyebrow": "Défis techniques",
-      "title": "Problèmes rencontrés & solutions apportées"
-    },
-    "optimizations": {
-      "eyebrow": "Optimisations",
-      "title": "Décisions d'ingénierie",
-      "performance": "Performance",
-      "security": "Sécurité",
-      "maintainability": "Maintenabilité",
-      "scalability": "Évolutivité",
-      "quality": "Qualité du code"
-    },
-    "gallery": {
-      "eyebrow": "Galerie",
-      "title": "Aperçu visuel",
-      "description": "Captures d'écran à venir — les emplacements ci-dessous sont prêts à recevoir les visuels réels."
-    },
-    "learnings": {
-      "eyebrow": "Ce que j'ai appris",
-      "title": "Compétences acquises"
-    },
-    "caveats": {
-      "eyebrow": "Limites connues",
-      "title": "État actuel & pistes d'amélioration",
-      "description": "Une revue de code honnête inclut ce qui n'est pas encore fait — voici les points identifiés directement dans le dépôt."
     },
     "cta": {
       "title": "Envie d'en savoir plus sur {name} ?",
@@ -171,8 +128,5 @@
       "exploreCode": "Explorer le code",
       "otherProjects": "Autres projets"
     }
-  },
-  "Mermaid": {
-    "renderError": "Le diagramme n'a pas pu être rendu."
   }
 }

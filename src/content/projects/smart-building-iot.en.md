@@ -21,6 +21,7 @@ techStack:
     items: ["Docker (multi-stage)", "Docker Compose (4 services)"]
   - category: "Tests"
     items: ["JUnit 5", "Mockito", "AssertJ", "spring-kafka-test", "@WebMvcTest / MockMvc"]
+architectureDescription: "Follow one reading end to end: a sensor posts a measurement to the REST API, which hands it to the validation layer before anything else happens. Out-of-bounds values are rejected on the spot; valid ones are published to Kafka, partitioned by device so a single sensor's readings always land in order. A consumer picks them up asynchronously, retries a bounded number of times on failure instead of blocking the topic, runs a simple threshold check for anomalies, and persists the reading to MongoDB."
 architectureFlow:
   - label: "Sensors"
     kind: "client"
@@ -70,6 +71,15 @@ architectureSummary:
   - "REST → Kafka → MongoDB pipeline"
   - "Kafka consumer retry (3× / 1s backoff) before drop"
   - "Isolated sensor simulator (dedicated Spring profile)"
+lessonsLearned:
+  - title: "Building an event-driven pipeline with Kafka"
+    description: "Learned how to produce and consume messages, and to partition a topic by device ID so a single sensor's readings stay in order."
+  - title: "Handling failures without blocking everything"
+    description: "Implemented a bounded retry (retry a few times, then log and skip) so one bad record can't get the whole pipeline stuck."
+  - title: "Validating input early"
+    description: "Learned to reject out-of-range data as soon as it comes in, before it reaches Kafka, instead of dealing with it further down the pipeline."
+  - title: "Testing each layer separately"
+    description: "Practiced testing the service, the Kafka producer/consumer, and the REST controller independently (JUnit, Mockito, spring-kafka-test)."
 ---
 
 Smart Building IoT is a Spring Boot backend designed to ingest, process, and store in real time temperature and humidity data from five simulated zones of a building (office, meeting room, corridor, server room, critical HVAC).

@@ -123,6 +123,10 @@
       "eyebrow": "Tech stack",
       "title": "Technologies used"
     },
+    "lessonsLearned": {
+      "eyebrow": "Retrospective",
+      "title": "What I learned building this"
+    },
     "cta": {
       "title": "Want to know more about {name}?",
       "description": "The complete source code is available on GitHub, along with the history and deployment configuration.",

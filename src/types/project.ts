@@ -20,6 +20,11 @@ export interface ArchitectureFlowColumn {
   nodes: ArchitectureFlowNode[];
 }
 
+export interface LessonLearned {
+  title: string;
+  description: string;
+}
+
 export interface ProjectFrontmatter {
   slug: string;
   name: string;
@@ -30,9 +35,11 @@ export interface ProjectFrontmatter {
   github: string;
   demo?: string;
   techStack: TechStackCategory[];
+  architectureDescription?: string;
   architectureFlow: ArchitectureFlowColumn[];
   architectureInfra?: ArchitectureFlowNode[];
   architectureSummary: string[];
+  lessonsLearned?: LessonLearned[];
 }
 
 export interface Project extends ProjectFrontmatter {

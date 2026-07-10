@@ -30,15 +30,17 @@ export function ArchitectureDiagram({
   flow,
   infra,
   summary,
+  description,
 }: {
   flow: ArchitectureFlowColumn[];
   infra?: ArchitectureFlowNode[];
   summary: string[];
+  description?: string;
 }) {
   const t = useTranslations("CaseStudy.architecture");
 
   return (
-    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")}>
+    <CaseStudySection eyebrow={t("eyebrow")} title={t("title")} description={description}>
       <Reveal>
         <div className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 shadow-2xl shadow-black/30">
           {/* console header */}

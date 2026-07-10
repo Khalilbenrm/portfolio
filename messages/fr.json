@@ -123,6 +123,10 @@
       "eyebrow": "Stack technique",
       "title": "Technologies utilisées"
     },
+    "lessonsLearned": {
+      "eyebrow": "Rétrospective",
+      "title": "Ce que j'en ai retiré"
+    },
     "cta": {
       "title": "Envie d'en savoir plus sur {name} ?",
       "description": "Le code source complet est disponible sur GitHub, avec l'historique et la configuration de déploiement.",

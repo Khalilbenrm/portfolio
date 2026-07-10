@@ -23,6 +23,7 @@ techStack:
     items: ["Docker (multi-stage builds)", "Docker Compose (12 services)"]
   - category: "Documentation & Tests"
     items: ["springdoc-openapi (aggregated Swagger)", "JUnit 5", "Mockito", "Testcontainers"]
+architectureDescription: "Follow one request end to end: the client sends an HTTPS call with a JWT to the gateway, which resolves the target service by name through Eureka and forwards it. Each business service revalidates that JWT independently, calls a neighbor synchronously only to check a reference exists (does this project's organization exist? does this task's project exist?), and publishes what just happened — a signup, a creation, a status change — onto RabbitMQ instead of blocking on who's listening. Every service also feeds Prometheus, which powers the Grafana dashboard shown below the diagram."
 architectureFlow:
   - label: "Client"
     kind: "client"
@@ -90,6 +91,17 @@ architectureSummary:
   - "RabbitMQ event-driven (compass.events)"
   - "Prometheus + Grafana, dashboard pre-provisioned"
   - "Testcontainers-backed integration tests"
+lessonsLearned:
+  - title: "Designing a microservices architecture"
+    description: "Learned how to split a single domain into independent services, each with its own database, and connect them with service discovery (Eureka) and an API gateway."
+  - title: "Securing a distributed system"
+    description: "Practiced validating a JWT independently in every service instead of only once at the gateway, and understood why that redundancy matters."
+  - title: "Choosing between REST and events"
+    description: "Learned when to use a synchronous REST call (I need an answer now) versus an asynchronous RabbitMQ event (something happened, others can react later)."
+  - title: "Integration testing with Testcontainers"
+    description: "Started writing integration tests against a real PostgreSQL instance instead of mocking the database, and caught bugs mocks wouldn't have shown."
+  - title: "Setting up monitoring"
+    description: "Learned to expose metrics with Spring Actuator/Micrometer and wire them into Prometheus and a Grafana dashboard."
 ---
 
 Compass is a project & task management platform (organizations, projects, tasks) built to work through, under realistic conditions, the actual problem behind a "let's split it into microservices" decision: decomposing a single monolithic domain into independently deployable services without breaking data consistency, security, or the operator's ability to actually run the result.

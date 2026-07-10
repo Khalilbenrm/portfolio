@@ -5,6 +5,7 @@ import { CaseStudyHero } from "@/components/projects/case-study/hero";
 import { CaseStudyAbout } from "@/components/projects/case-study/about";
 import { ArchitectureDiagram } from "@/components/projects/case-study/architecture-diagram";
 import { TechStack } from "@/components/projects/case-study/tech-stack";
+import { LessonsLearned } from "@/components/projects/case-study/lessons-learned";
 import { CaseStudyCta } from "@/components/projects/case-study/cta";
 import { Separator } from "@/components/ui/separator";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
@@ -57,9 +58,16 @@ export default async function ProjectPage({
         flow={project.architectureFlow}
         infra={project.architectureInfra}
         summary={project.architectureSummary}
+        description={project.architectureDescription}
       />
       <Separator className="mx-auto max-w-6xl" />
       <TechStack stack={project.techStack} />
+      {project.lessonsLearned && project.lessonsLearned.length > 0 && (
+        <>
+          <Separator className="mx-auto max-w-6xl" />
+          <LessonsLearned items={project.lessonsLearned} />
+        </>
+      )}
       <CaseStudyCta project={project} />
     </>
   );

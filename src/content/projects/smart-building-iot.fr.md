@@ -21,6 +21,7 @@ techStack:
     items: ["Docker (multi-stage)", "Docker Compose (4 services)"]
   - category: "Tests"
     items: ["JUnit 5", "Mockito", "AssertJ", "spring-kafka-test", "@WebMvcTest / MockMvc"]
+architectureDescription: "Suivez une mesure de bout en bout : un capteur poste une mesure sur l'API REST, qui la transmet à la couche de validation avant toute autre chose. Les valeurs hors bornes sont rejetées immédiatement ; les valeurs valides sont publiées sur Kafka, partitionnées par appareil pour que les mesures d'un même capteur arrivent toujours dans l'ordre. Un consumer les récupère de façon asynchrone, retente un nombre borné de fois en cas d'échec plutôt que de bloquer le topic, applique une détection d'anomalie par seuil simple, puis persiste la mesure dans MongoDB."
 architectureFlow:
   - label: "Capteurs"
     kind: "client"
@@ -70,6 +71,15 @@ architectureSummary:
   - "Pipeline REST → Kafka → MongoDB"
   - "Retry consumer Kafka (3× / backoff 1s) avant abandon"
   - "Simulateur de capteurs isolé (profil Spring dédié)"
+lessonsLearned:
+  - title: "Construire un pipeline événementiel avec Kafka"
+    description: "Appris à produire et consommer des messages, et à partitionner un topic par deviceId pour que les mesures d'un même capteur restent dans l'ordre."
+  - title: "Gérer les pannes sans tout bloquer"
+    description: "Mis en place un retry borné (quelques tentatives, puis journalisation et abandon) pour qu'un enregistrement corrompu ne bloque pas tout le pipeline."
+  - title: "Valider les données en amont"
+    description: "Appris à rejeter les données hors bornes dès leur arrivée, avant qu'elles n'atteignent Kafka, plutôt que de les traiter plus loin dans le pipeline."
+  - title: "Tester chaque couche séparément"
+    description: "Pratiqué les tests du service, du producer/consumer Kafka et du contrôleur REST indépendamment (JUnit, Mockito, spring-kafka-test)."
 ---
 
 Smart Building IoT est un backend Spring Boot conçu pour ingérer, traiter et stocker en temps réel des données de température et d'humidité provenant de cinq zones simulées d'un bâtiment (bureau, salle de réunion, couloir, salle serveur, HVAC critique).

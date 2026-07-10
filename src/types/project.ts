@@ -31,6 +31,7 @@ export interface ProjectFrontmatter {
   demo?: string;
   techStack: TechStackCategory[];
   architectureFlow: ArchitectureFlowColumn[];
+  architectureInfra?: ArchitectureFlowNode[];
   architectureSummary: string[];
 }
 

@@ -116,7 +116,8 @@
     },
     "architecture": {
       "eyebrow": "Architecture",
-      "title": "How the system is built"
+      "title": "How the system is built",
+      "infraLabel": "Packaged & orchestrated with"
     },
     "techStack": {
       "eyebrow": "Tech stack",

@@ -116,7 +116,8 @@
     },
     "architecture": {
       "eyebrow": "Architecture",
-      "title": "Comment le système est construit"
+      "title": "Comment le système est construit",
+      "infraLabel": "Empaqueté & orchestré avec"
     },
     "techStack": {
       "eyebrow": "Stack technique",

@@ -8,7 +8,7 @@ import { DynamicIcon } from "@/components/common/icon";
 import { Reveal } from "@/components/common/reveal";
 import { cn } from "@/lib/utils";
 import { CaseStudySection } from "./section";
-import type { ArchitectureFlowColumn, ArchitectureFlowKind } from "@/types/project";
+import type { ArchitectureFlowColumn, ArchitectureFlowKind, ArchitectureFlowNode } from "@/types/project";
 
 const KIND_STYLES: Record<ArchitectureFlowKind, { text: string; icon: string; glow: string; ring: string }> = {
   client: { text: "text-sky-400", icon: "text-sky-400", glow: "rgba(56,189,248,0.35)", ring: "hover:border-sky-500/40" },
@@ -28,9 +28,11 @@ const KIND_BG: Record<ArchitectureFlowKind, string> = {
 
 export function ArchitectureDiagram({
   flow,
+  infra,
   summary,
 }: {
   flow: ArchitectureFlowColumn[];
+  infra?: ArchitectureFlowNode[];
   summary: string[];
 }) {
   const t = useTranslations("CaseStudy.architecture");
@@ -123,6 +125,31 @@ export function ArchitectureDiagram({
               })}
             </div>
           </div>
+
+          {/* infra band — wraps the pipeline, not part of the data flow */}
+          {infra && infra.length > 0 && (
+            <div className="border-t border-neutral-800 bg-neutral-900/60 px-4 py-3 sm:px-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="font-mono text-[9px] font-semibold uppercase tracking-widest text-neutral-500">
+                  {t("infraLabel")}
+                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  {infra.map((node) => (
+                    <div
+                      key={node.label}
+                      className="flex items-center gap-1.5 rounded-lg border border-dashed border-neutral-700 bg-neutral-900 px-2.5 py-1.5"
+                    >
+                      <DynamicIcon name={node.icon} className="h-3 w-3 text-neutral-400" strokeWidth={1.75} />
+                      <span className="text-[11px] font-medium text-neutral-300">{node.label}</span>
+                      {node.specs && node.specs.length > 0 && (
+                        <span className="font-mono text-[9px] text-neutral-500">{node.specs.join(" · ")}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* spec sheet footer */}
           {summary.length > 0 && (

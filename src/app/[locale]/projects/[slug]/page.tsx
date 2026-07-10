@@ -53,7 +53,11 @@ export default async function ProjectPage({
       <Separator className="mx-auto mt-16 max-w-6xl" />
       <CaseStudyAbout content={project.about} />
       <Separator className="mx-auto max-w-6xl" />
-      <ArchitectureDiagram flow={project.architectureFlow} summary={project.architectureSummary} />
+      <ArchitectureDiagram
+        flow={project.architectureFlow}
+        infra={project.architectureInfra}
+        summary={project.architectureSummary}
+      />
       <Separator className="mx-auto max-w-6xl" />
       <TechStack stack={project.techStack} />
       <CaseStudyCta project={project} />

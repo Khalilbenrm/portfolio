@@ -2,15 +2,13 @@
 slug: "smart-building-iot"
 name: "Smart Building IoT"
 tagline: "Real-time event-driven pipeline for IoT sensor telemetry"
-description: "Spring Boot backend ingesting temperature/humidity data from five zones of a building over MQTT, relaying it to Kafka for anomaly detection, then persisting it to MongoDB — exposed via an OpenAPI-documented REST API."
+description: "Spring Boot backend ingesting temperature/humidity data from five zones of a building via REST, relaying it to Kafka for anomaly detection, then persisting it to MongoDB — exposed via an OpenAPI-documented REST API."
 status: "completed"
 featured: true
 github: "https://github.com/Khalilbenrm/smart-building-iot-java"
 techStack:
   - category: "Language & Framework"
     items: ["Java 17", "Spring Boot 3.2.5", "Maven"]
-  - category: "IoT Messaging"
-    items: ["Eclipse Paho MQTT Client 1.2.5", "Mosquitto (MQTT broker)"]
   - category: "Streaming"
     items: ["Apache Kafka", "Spring Kafka", "Zookeeper"]
   - category: "Database"
@@ -20,13 +18,13 @@ techStack:
   - category: "Observability"
     items: ["Spring Actuator (health, info)"]
   - category: "DevOps"
-    items: ["Docker (multi-stage)", "Docker Compose (5 services)"]
+    items: ["Docker (multi-stage)", "Docker Compose (4 services)"]
   - category: "Tests"
     items: ["JUnit 5", "Mockito", "AssertJ", "spring-kafka-test", "@WebMvcTest / MockMvc"]
 architectureFlow:
   - label: "Sensors"
     kind: "client"
-    edgeLabel: "MQTT / REST"
+    edgeLabel: "REST"
     nodes:
       - icon: "Cpu"
         label: "IoT Sensors"
@@ -35,12 +33,9 @@ architectureFlow:
     kind: "gateway"
     edgeLabel: "after validation"
     nodes:
-      - icon: "Radio"
-        label: "MQTT Broker"
-        specs: ["Mosquitto", "QoS 1"]
       - icon: "PlugZap"
         label: "REST API"
-        specs: ["POST /api/sensors"]
+        specs: ["POST /api/sensors/data", "Swagger UI"]
   - label: "Validation"
     kind: "service"
     edgeLabel: "publish to Kafka"
@@ -64,18 +59,23 @@ architectureFlow:
       - icon: "AlertTriangle"
         label: "Anomaly detection"
         specs: [">30°C / >80%"]
+architectureInfra:
+  - icon: "Container"
+    label: "Docker"
+    specs: ["multi-stage build"]
+  - icon: "Boxes"
+    label: "Docker Compose"
+    specs: ["4 services"]
 architectureSummary:
-  - "MQTT → Kafka → MongoDB pipeline"
-  - "Automatic MQTT reconnection"
-  - "Dual ingestion path (MQTT + REST)"
-  - "Isolated sensor simulator"
-  - "Docker Compose (5 services)"
+  - "REST → Kafka → MongoDB pipeline"
+  - "Kafka consumer retry (3× / 1s backoff) before drop"
+  - "Isolated sensor simulator (dedicated Spring profile)"
 ---
 
 Smart Building IoT is a Spring Boot backend designed to ingest, process, and store in real time temperature and humidity data from five simulated zones of a building (office, meeting room, corridor, server room, critical HVAC).
 
-**Context and problem.** IoT systems must absorb a continuous stream of measurements from potentially unreliable sensors (connection loss, outlier data) while staying responsive to abnormal conditions (overheating, excessive humidity). The core technical challenge isn't the collection itself, but the robustness of the pipeline: what happens if a sensor loses its MQTT connection? If Kafka hits a processing error? If a reading is physically impossible?
+**Context and problem.** IoT systems must absorb a continuous stream of measurements from potentially unreliable sensors (malformed payloads, physically impossible readings) while staying responsive to abnormal conditions (overheating, excessive humidity). The core technical challenge isn't the ingestion itself, but the robustness of what happens after: how do you keep a single bad reading or a transient processing error from blocking the whole pipeline?
 
-**Solution.** The project answers these questions with a three-stage decoupled pipeline: an MQTT subscriber (Eclipse Paho) receives measurements and explicitly handles reconnection and re-subscription; a validation service rejects out-of-bounds values before any propagation; validated data flows through Kafka (partitioned by device, with a bounded retry policy) before being persisted to MongoDB. A sensor simulator, isolated in its own Spring profile, demonstrates the end-to-end pipeline without real hardware, never interfering with the consumer role thanks to mutually exclusive Spring profiles.
+**Solution.** The project answers this with a three-stage decoupled pipeline: a REST endpoint accepts readings and hands them to a validation service, which rejects out-of-bounds values (-80°C to 150°C, 0-100% humidity) before any propagation; validated readings are published to Kafka (partitioned by device, keyed by `deviceId`); a consumer processes them asynchronously, retrying failed records a bounded number of times before logging and skipping them rather than blocking the topic, running simple anomaly detection, and persisting valid readings to MongoDB. A sensor simulator, isolated in its own Spring profile, demonstrates the end-to-end pipeline without real hardware by calling the exact same service layer as the REST endpoint.
 
-**Benefits and honest scoping.** The result is a coherent event pipeline, tested layer by layer, with realistic failure handling (MQTT reconnection, bounded Kafka retry). This project also clearly owns its current limitations: it's a pure backend service with no graphical interface, anomaly detection is limited to a logged warning rather than a full alerting system, and no authentication is in place yet — all documented as areas for future work rather than hidden.
+**Benefits and honest scoping.** The result is a coherent, decoupled event pipeline, tested layer by layer (service, Kafka producer/consumer, REST controller), with realistic failure handling — input validation up front and a bounded, non-blocking retry policy on the consumer. This project also clearly owns its current limitations: it's a pure backend service with no graphical interface, anomaly detection is limited to a logged warning rather than a full alerting system, and no authentication is in place yet — all documented as areas for future work rather than hidden.

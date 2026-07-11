@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
-import { Placeholder } from "@/components/common/placeholder";
+import { ProjectCover } from "@/components/projects/project-cover";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/types/project";
 
@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group block overflow-hidden rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card)] transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
     >
-      <Placeholder label={project.name} icon="LayoutTemplate" className="rounded-none border-0 border-b" />
+      <ProjectCover slug={project.slug} name={project.name} className="rounded-none border-0 border-b" />
       <div className="p-6">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge>{t("caseStudy")}</Badge>

@@ -45,12 +45,3 @@ export interface ProjectFrontmatter {
 export interface Project extends ProjectFrontmatter {
   about: string;
 }
-
-export interface InProgressProject {
-  slug: string;
-  name: string;
-  description: string;
-  tech: string[];
-  progress: number;
-  status: "coming-soon" | "in-development";
-}

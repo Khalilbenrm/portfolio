@@ -7,6 +7,7 @@ import { FeaturedProjects } from "@/components/home/featured-projects";
 import { Education } from "@/components/home/education";
 import { Contact } from "@/components/home/contact";
 import { SectionTitleSync } from "@/components/home/section-title-sync";
+import { HashScroll } from "@/components/home/hash-scroll";
 import { Separator } from "@/components/ui/separator";
 import {
   getSiteConfig,
@@ -38,6 +39,7 @@ export default async function Home({
   return (
     <>
       <SectionTitleSync siteName={site.shortName} />
+      <HashScroll />
       <Hero site={site} />
       <Separator />
       <About headline={about.headline} focus={about.focus} content={about.content} />

@@ -5,7 +5,7 @@ import siteJson from "@/content/site.json";
 import skillsJson from "@/content/skills.json";
 import type { Locale } from "@/i18n/routing";
 import type { RawSiteConfig, SiteConfig, Skill, Certification } from "@/types/site";
-import type { InProgressProject, Project, ProjectFrontmatter } from "@/types/project";
+import type { Project, ProjectFrontmatter } from "@/types/project";
 import type { EducationEntry, ExperienceEntry } from "@/types/experience";
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
@@ -28,12 +28,6 @@ export function getSkills(): Skill[] {
 
 export function getCertifications(): Certification[] {
   return (skillsJson as { certifications: Certification[] }).certifications;
-}
-
-export function getInProgressProjects(locale: Locale): InProgressProject[] {
-  const filePath = path.join(CONTENT_DIR, `projects-in-progress.${locale}.json`);
-  const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as { items: InProgressProject[] };
-  return raw.items;
 }
 
 export function getAboutContent(locale: Locale) {

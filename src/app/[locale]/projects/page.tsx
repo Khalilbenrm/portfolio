@@ -3,8 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Reveal } from "@/components/common/reveal";
 import { ProjectCard } from "@/components/projects/project-card";
-import { InProgressCard } from "@/components/projects/in-progress-card";
-import { getAllProjects, getInProgressProjects } from "@/lib/content";
+import { getAllProjects } from "@/lib/content";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -30,7 +29,6 @@ export default async function ProjectsPage({
 
   const t = await getTranslations("ProjectsPage");
   const projects = getAllProjects(locale);
-  const inProgress = getInProgressProjects(locale);
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-24">
@@ -43,19 +41,6 @@ export default async function ProjectsPage({
           </Reveal>
         ))}
       </div>
-
-      {inProgress.length > 0 && (
-        <div className="mt-24">
-          <SectionHeading eyebrow={t("upcomingEyebrow")} title={t("upcomingTitle")} />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {inProgress.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 0.08}>
-                <InProgressCard project={project} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -92,17 +92,11 @@
   "ProjectsPage": {
     "eyebrow": "Portfolio",
     "title": "Projects",
-    "description": "Each project below is a complete case study: architecture, tech stack, diagrams, and challenges faced — all derived directly from the source code.",
-    "upcomingEyebrow": "Coming up",
-    "upcomingTitle": "Projects in progress"
+    "description": "Each project below is a complete case study: architecture, tech stack, diagrams, and challenges faced — all derived directly from the source code."
   },
   "ProjectCard": {
     "caseStudy": "Case study",
     "codeSource": "Source code"
-  },
-  "InProgressCard": {
-    "inDevelopment": "In development",
-    "comingSoon": "Coming soon"
   },
   "CaseStudy": {
     "hero": {

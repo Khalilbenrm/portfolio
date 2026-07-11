@@ -92,17 +92,11 @@
   "ProjectsPage": {
     "eyebrow": "Portfolio",
     "title": "Projets",
-    "description": "Chaque projet ci-dessous est une étude de cas complète : architecture, stack technique, diagrammes et défis rencontrés — tout est déduit directement du code source.",
-    "upcomingEyebrow": "À venir",
-    "upcomingTitle": "Projets en cours"
+    "description": "Chaque projet ci-dessous est une étude de cas complète : architecture, stack technique, diagrammes et défis rencontrés — tout est déduit directement du code source."
   },
   "ProjectCard": {
     "caseStudy": "Case study",
     "codeSource": "Code source"
-  },
-  "InProgressCard": {
-    "inDevelopment": "En développement",
-    "comingSoon": "Bientôt disponible"
   },
   "CaseStudy": {
     "hero": {

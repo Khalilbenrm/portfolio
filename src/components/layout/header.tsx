@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { key: "experience", href: "/#experience" },
   { key: "education", href: "/#education" },
   { key: "skills", href: "/#skills" },
-  { key: "projects", href: "/projects" },
+  { key: "projects", href: "/#projects" },
   { key: "contact", href: "/#contact" },
 ] as const;
 
@@ -41,15 +41,18 @@ export function Header({ site }: { site: SiteConfig }) {
   // Hash-anchor items (#about, #skills, ...) all live on "/", so their active
   // state is driven by scroll position (useActiveSection) rather than the
   // pathname. "Home" is only active while at the top, before any section
-  // has scrolled into view. "/projects" is a real route, but the home page
-  // also has a "projects" preview section, so it's active either way.
+  // has scrolled into view. "Projects" also stays active on the dedicated
+  // /projects listing and case-study pages, even though the nav item itself
+  // points at the home page's preview section rather than those routes.
   const isActive = (href: string) => {
+    if (href === "/#projects") {
+      return pathname.startsWith("/projects") || (pathname === "/" && activeSection === "projects");
+    }
     if (href.includes("#")) {
       if (pathname !== "/") return false;
       return activeSection === href.split("#")[1];
     }
     if (href === "/") return pathname === "/" && activeSection === null;
-    if (href === "/projects" && pathname === "/" && activeSection === "projects") return true;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

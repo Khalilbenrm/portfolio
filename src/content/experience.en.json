@@ -4,40 +4,40 @@
       "id": "qa-specialization",
       "title": "Software Quality & Testing Specialization (self-directed)",
       "company": null,
-      "location": null,
+      "location": "Antibes, France",
       "period": "June 2026 — Present",
       "current": true,
       "bullets": [
-        "ISTQB Foundation Level certification obtained",
-        "Deepening test automation skills with Selenium, Postman, and JUnit",
-        "Building structured test strategies (test plans, test cases, exploratory testing)",
-        "Applying these skills hands-on across personal projects (API testing, automation)"
+        "Preparing for the ISTQB Foundation Level certification",
+        "Writing and executing manual test cases, tracking defects in Jira",
+        "Automating tests with Selenium, Playwright, Postman, and JUnit",
+        "Applying Agile methodologies (Scrum, Kanban) and software quality best practices"
       ]
     },
     {
       "id": "cdi-polydron",
-      "title": "Full-time — Backend Java Engineer ",
-      "company": "Sodexo (via Polydron Labs)",
+      "title": "Full-time — Java Backend Engineer, Microservices",
+      "company": "Polydron Labs",
       "location": "Paris, France",
-      "period": "January 2025 — June 2026",
+      "period": "November 2025 — March 2026",
       "current": false,
       "bullets": [
-        "Built and maintained Spring Boot microservices in a distributed environment",
+        "Developed Spring Boot microservices in a distributed environment",
         "Optimized REST API performance and improved service resilience",
         "Contributed to backend architecture and distributed systems design"
       ]
     },
     {
       "id": "pfe-polydron",
-      "title": "Graduate Internship — Backend Java Engineer",
+      "title": "Graduation Internship — Java Backend Engineer",
       "company": "Polydron Labs",
       "location": "Paris, France",
       "period": "April 2024 — December 2024",
       "current": false,
       "bullets": [
-        "Designed and built REST APIs with Spring Boot and PostgreSQL integration",
-        "Set up CI/CD pipelines to automate deployments",
-        "Continuously improved backend service quality and stability"
+        "Built an advanced search module for an ERP system with Spring Boot, REST APIs, and PostgreSQL",
+        "Implemented multi-criteria search filters for more relevant results",
+        "Set up CI/CD pipelines to automate the module's deployment"
       ]
     },
     {
